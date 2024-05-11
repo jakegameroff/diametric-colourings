@@ -11,30 +11,61 @@ Recall that a \emph{metric} on a set \( X \) is a function \( d : X \times X \to
 The pair \( (X,d) \) is called a \emph{metric space}. A stronger version of (3) is called the \emph{strong triangle inequality}: \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \} . \] If the strong triangle inequality holds, then we call \( d \) an \emph{ultrametric} and \( (X,d) \) an \emph{ultrametric space}. In what follows, unless otherwise specified, \( (X, d) \) (or simply \( X \)) is an ultrametric space.
 
 \begin{lemma}
-If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(x,z) = d(x,y) \). (That is, every triangle in an ultrametric space is isosceles.
+If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(y,z) = d(x,z) \). (That is, every triangle in an ultrametric space is isosceles.)
 \end{lemma}
 \begin{proof}
-
+Note that \( d \) is an ultrametric and \( d(x,y) < d(y,z) \) so that
+\begin{align*}
+	d(x, z) &\leq \max \{ d(x,y), d(y, z) \} = d(y,z),
+\end{align*}
+and since \( d(y,z) > d(x,y) \), we have \( d(x,y) < d(x,z) \) as otherwise
+\begin{align*}
+	d(y,z) &\leq \max \{ d(y, x) , d(x, z) \} = \max \{ d(x,y) , d(x,z) \} = d(x,y)
+\end{align*}
+is a contradiction. Thus \( d(y,z) \leq \max \{ d(x,y), d(x,z) \} = d(x,z) \). Combining everything together, we obtain \( d(y,z) = d(x,z) \).
 \end{proof}
+\noindent \textcolor{red}{Example of ultrametric space}
+
+
 
 An \emph{open ball} (or simply a \emph{ball}) of radius \( \varepsilon > 0 \) centered about a point \( x \in  X \) is defined as the set \( B_{\varepsilon }(x) \coloneqq \{ y \in X : d(x,y) < \varepsilon  \}  \). If left unspecified, note that \( x \) denotes a point in \( X \) and \( \varepsilon  \) a positive real number. 
 
-A subset \( \mathcal{O}  \) of \( X \) is called \emph{open} if it can be written as a union of open balls. A set is \emph{closed} if its complement is open. Open balls (and hence open sets) in ultrametric spaces exhibit properties that are quite counterintuitive, as delineated by the following simple results.
-\begin{lemma}
+A subset \( \mathcal{O}  \) of \( X \) is called \emph{open} if it can be written as a union of open balls. A set is \emph{closed} if its complement is open. Open balls and general sets in ultrametric spaces exhibit properties that are quite counterintuitive, as delineated by the following simple observations.
+\begin{observation}
 Let \( B_{\varepsilon } (x) \) be an open ball in \( X \). Then \( B_{\varepsilon } (x) = B_{\varepsilon } (y) \) for every point \( y \in B_{\varepsilon } (x) \). (That is, every point in a ball is its center.)
-\end{lemma}
+\end{observation}
 \begin{proof}
 Fix \( y \in B_{\varepsilon } (x) \) so that \( d(x,y) < \varepsilon  \). If \( t \in B_{\varepsilon } (y) \) then \( d(y,t) < \varepsilon  \). Then \( t \in B_{\varepsilon } (x) \) since \[ d(x, t) \leq \max \{ d(x,y), d(y,t) \} < \varepsilon . \] The reverse inclusion follows symmetrically as \( x \in B_{\varepsilon } (y) \).
 \end{proof}
-\begin{corollary}
-Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
-\end{corollary}
+\begin{observation}
+Let \( E \subseteq X \) have diameter \( \operatorname{diam} E = \ell \). Then there exist points \( x,y \in E \) with \( d(x,y) = \ell \). (That is, every set attains its diameter.)
+\end{observation}
 \begin{proof}
-Assume without loss of generality that \( \varepsilon_1 \leq \varepsilon_2 \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2} (y) \neq \emptyset \), there is a point \( t \in X \) with \( t \in B_{\varepsilon_1}(x) \) and \( t \in  B_{\varepsilon_2} (y)  \). By (lemma) and since \( \varepsilon_1 \leq \varepsilon_2 \), we obtain \( B_{\varepsilon_1} (x) = B_{\varepsilon_1} (t) \subseteq B_{\varepsilon_2} (t) = B_{\varepsilon_2} (y) \) as required.
+
 \end{proof}
-\begin{corollary}
-If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B_{\varepsilon } (x) \) is a union of open balls. (That is, \( B_{\varepsilon } (x) \) is closed in \( X \)).
-\end{corollary}
+
+
+
+
+
+
+\newpage
+\begin{observation}
+Let \( E \subseteq X \) and consider any ball \( B_{\varepsilon } (x) \) in \( X \). Then if \(B = E \cap B_{\varepsilon } (x) \neq \emptyset  \) then \( B \) is a ball.
+\end{observation}
+\begin{proof}
+u
+\end{proof}
+\begin{observation}
+Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
+\end{observation}
+\begin{proof}
+This is a weaker version of (obs), but we give the statement its own proof for clarity. Assume without loss of generality that \( \varepsilon_1 \leq \varepsilon_2 \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2} (y) \neq \emptyset \), there is a point \( t \in X \) with \( t \in B_{\varepsilon_1}(x) \) and \( t \in  B_{\varepsilon_2} (y)  \). By (lemma) and since \( \varepsilon_1 \leq \varepsilon_2 \), we obtain \( B_{\varepsilon_1} (x) = B_{\varepsilon_1} (t) \subseteq B_{\varepsilon_2} (t) = B_{\varepsilon_2} (y) \) as required.
+\end{proof}
+\begin{observation}
+If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B_{\varepsilon } (x) \) is a union of open balls. (That is, open balls are closed in \( X \).)
+\end{observation}
 \begin{proof}
 Suppose for a contradiction that there is a point \( t \in X \setminus B_{\varepsilon} (x) \) such that for every \( r > 0 \) the ball \( B_{r}(t) \) is not contained in \( X \setminus B_{\varepsilon } (x) \), so \( B_{r} (t) \cap B_{\varepsilon} (x) \neq \emptyset \). Setting \( r = \varepsilon  \) and using (lemma), we have \( B_{\varepsilon} (t) \subseteq B_{\varepsilon } (x) \) or \( B_{\varepsilon} (t) \subseteq B_{\varepsilon} (x) \). In either case, (lemma) implies equality. But then \( t \in X \setminus B_{\varepsilon } (x) = X \setminus B_{\varepsilon } (t) \) is a contradiction. Hence \( X \setminus B_{\varepsilon } (x) \) is a union of open balls so that \( B_{\varepsilon } (x) \) is closed in \( X \).
 \end{proof}
+
