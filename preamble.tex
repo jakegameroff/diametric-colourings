@@ -1,0 +1,29 @@
+\documentclass[reqnom, 12pt]{amsart}
+\usepackage{amsthm, amssymb, amsmath, mathtools, braket}
+\usepackage{setspace}
+\usepackage[shortlabels]{enumitem}
+\usepackage{lipsum} 
+%\usepackage{MnSymbol,wasysym}
+\usepackage{comment}
+%\setlist{nolistsep}
+%\onehalfspacing
+
+%%%—definitions, theorems, propositions, etc.—%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em, rightmargin=1em, innertopmargin=5pt, innerbottommargin=10pt}
+
+\declaretheoremstyle[headfont=\bfseries, bodyfont=\itshape]{definition}
+\declaretheoremstyle[headfont=\bfseries\color{black}, bodyfont=\itshape]{thm}
+\declaretheoremstyle[headfont=\bfseries\color{black}, bodyfont=\itshape]{prop}
+\declaretheoremstyle[headfont=\bfseries, bodyfont=\itshape]{cor}
+\declaretheoremstyle[headfont=\bfseries, bodyfont=\normalfont]{example}
+
+\declaretheorem[numberwithin=section, style=definition, name=Definition]{definition}
+\declaretheorem[numberwithin=section, style=thm, name=Theorem]{theorem}
+\declaretheorem[numberwithin=section, style=prop, name=Proposition]{proposition}
+\declaretheorem[numberwithin=section, style=cor, name=Lemma]{lemma}
+\declaretheorem[numberwithin=section, style=cor, name=Corollary]{corollary}
+\declaretheorem[numberwithin=section, style=example, name=Example]{example}
+\declaretheorem[numberwithin=section, style=example, name=Remark]{remark}

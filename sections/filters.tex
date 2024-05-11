@@ -1,0 +1,61 @@
+%! TeX root: ../main.tex
+\section{Filters}
+\begin{lemma}
+ If \( \mathcal{K}  \) is a family of subsets satisfying the FIP, then there is a filter \(  \mathcal{F}  \) containing each element of \( \mathcal{K}  \).
+\end{lemma}
+\begin{proof}
+	First let \( \mathcal{F}' = \mathcal{K} \cup \mathcal{I}  \), where \( \mathcal{I}  \) is the set of all finite intersections of elements of \( \mathcal{K}  \). Hence \( \mathcal{F} ' \) is closed under finite intersections. Then, let \( \mathcal{F} = \mathcal{F}' \cup \mathcal{S}  \), where \( A \in \mathcal{S}  \) if and only if \( A \) contains a set in \( \mathcal{F} ' \).
+
+	Clearly \( \mathcal{F}  \) is closed when taking supersets. If \( A, B \in \mathcal{F}  \), the only non-trivial needing consideration is, without loss of generality, when \( A \in \mathcal{S}  \). So, if \( B \in \mathcal{S}  \) or \( B \in \mathcal{F} ' \), then there exist sets \( A', B' \in \mathcal{F}'  \) such that \( A' \subseteq A \) and \( B' \subseteq B \) (if \( B \in \mathcal{F} ' \) then \( B' = B \)). Since \( \mathcal{F} ' \) is closed under finite intersections, \( A' \cap B' \in \mathcal{F} ' \). Then, from \( A' \cap B' \subseteq A \cap B \) it follows that \( A \cap B \in \mathcal{S} \subseteq \mathcal{F}  \). Hence \( \mathcal{F}  \) is closed under finite intersections.
+\end{proof}
+\begin{lemma}
+A family \( \mathcal{F}  \) is an ultrafilter if and only if for every subset \( A \subseteq \mathbb{N}  \) either \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \).
+\end{lemma}
+\begin{proof}
+Let \( \mathcal{F}  \) be an ultrafilter and suppose for a contradiction that there is a subset \( A \subseteq \mathbb{N}  \) with \( A, A^{c} \notin \mathcal{F}  \). So every set in \( \mathcal{F}  \) intersects both \( A \) and \( A^{c}  \). It follows from (lemma) that the filter extending \( \mathcal{F} \cup \{ A, A^{c}  \}  \) properly contains \( \mathcal{F}  \), which is a contradiction. Now suppose \( \mathcal{F}  \) is a filter such that for every subset \( A \subseteq \mathbb{N}  \), either \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \). Assume for a contradiction that \( \mathcal{F} ' \) is a filter which properly contains \( \mathcal{F}  \). So there is a subset \( E \subseteq \mathbb{N}  \) with \( E \in \mathcal{F} ' \) and \( E \notin \mathcal{F}  \). Thus \( E^{c} \in \mathcal{F}  \) and hence \( E^{c} \in \mathcal{F} ' \). But then \( \mathcal{F} ' \) contains the emptyset since it is closed under finite intersections and \( \emptyset = E \cap E^{c} \in \mathcal{F} ' \), a contradiction.
+\end{proof}
+\begin{lemma}
+A family \( \mathcal{F}  \) is an ultrafilter if and only if \( \mathcal{F}  \) has the Ramsey property.
+\end{lemma}
+\begin{proof}
+	Let \( \mathcal{F}  \) be an ultrafilter and suppose for a contradiction that \( A = A_1 \cup A_2 \) is in \( \mathcal{F}\) but \( A_1, A_2 \notin \mathcal{F}  \). Hence (lemma) we have \( A_1^{c} , A_2^{c} \in \mathcal{F}  \) so that \( A^{c} = A_1^{c} \cap A_2^{c} \in \mathcal{F}  \). Consequently, \( \emptyset = A \cap A^{c} \in \mathcal{F}  \) is a contradiction. The case where \( A = A_1 \cup \cdots \cup A_{n}  \) follows via elementary induction. Conversely, assume \( \mathcal{F}  \) has the Ramsey property. If \( \mathcal{F}  \) is not an ultrafilter, then there is a subset \( A \subseteq \mathbb{N}  \) with \( A, A^{c} \notin \mathcal{F}  \). But \( \mathbb{N} \in \mathcal{F}  \) and \( \mathbb{N} = A \cup A^{c}  \), so we must have \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \), a contradiction.
+\end{proof}
+\begin{proposition}
+A family \( \mathcal{F}  \) is an ultrafilter if and only if \( \mathcal{F} ^{\ast}  \) is a filter.
+\end{proposition}
+\begin{proof}
+Let us first assume that \( \mathcal{F}  \) is an ultrafilter, and fix \( A,B \in \mathcal{F} ^{\ast}  \). To prove that \( A \cap B \in \mathcal{F} ^{\ast}  \), it suffices to fix a set \( E \in \mathcal{F}  \) and prove that \( E \) intersects \( A \cap B \). Noting that since \( A \in \mathcal{F} ^{\ast}  \) we have \( E \cap A \neq \emptyset  \), write \[ E = (E \cap A) \cup (E \setminus A). \] Certainly \( E \setminus A \notin \mathcal{F}  \), as otherwise \( A \in \mathcal{F} ^{\ast}  \) implies \( (E\setminus A) \cap A \neq \emptyset \). (lemma) implies that \( \mathcal{F}  \) satisfies the Ramsey property so that the set \( E \cap A \in \mathcal{F}  \). Since \( B \in \mathcal{F} ^{\ast}  \), it follows as needed that \( E \cap A \cap B \neq \emptyset  \).
+
+Conversely, we suppose \( \mathcal{F} ^{\ast}  \) is a filter. Suppose towards a contradiction that \( \mathcal{F}  \) is not an ultrafilter. Hence by (lemma) there is a subset \( A \subseteq \mathbb{N}  \) with \( A, A^{c} \notin \mathcal{F}  \). So no set in \( \mathcal{F}  \) is contained in \( A \) and likewise for \( A^{c}  \). That is, for every set \( B \in \mathcal{F}  \), we have \( A \cap B \neq \emptyset  \) and \( A^{c} \cap B \neq \emptyset  \). By definition, then, \( A, A^{c} \in \mathcal{F}^{\ast}   \). But \( \mathcal{F} ^{\ast}  \) is a filter, so \( \emptyset = A \cap A^{c} \in \mathcal{F} ^{\ast}  \) is a contradiction, and the proof is complete.
+\end{proof}
+
+\begin{comment}
+A \emph{dynamical system} is a pair \( (X,f) \), where \( X \) is a compact Hausdorff space and \( f : X \to X \) is a continuous function. When \( X \) is metrizable, we call the dynamical system \( (X,f) \) a \emph{metric system}. In what follows, we use \( X \) to denote a fixed metric system with metric \( d \).
+
+Fix \( \varepsilon > 0 \) and let \( \xi = \{ x_{n}  \}_{n=1} ^{\infty}   \) be a sequence in \( X \). We say that a point \( x \in X \) \emph{\( \varepsilon  \)-shadows} \( \xi \) on a subset \( A \subseteq \mathbb{N}  \) if the orbit of \( x \) well-approximates \( \xi \) on \( A \); that is,  \[A \subseteq \{ n \in \mathbb{N} : d(f^{n} (x), x_{n} ) < \varepsilon  \} . \]
+
+
+We will call a collection \( \mathcal{F}  \) of subsets of \( \mathbb{N}  \) a \emph{filter} if
+\begin{enumerate}
+	\item \( \emptyset \notin \mathcal{F}  \) and \( \mathbb{N}  \in \mathcal{F}  \);
+	\item If \( A \in \mathcal{F}  \) and \( A \subseteq B \subseteq \mathbb{N} \), then \( B \in \mathcal{F}  \); and
+	\item If \( A, B \in \mathcal{F}  \), then \( A \cap B \in \mathcal{F}  \).
+\end{enumerate}
+A filter that is not contained in any other filter is called an \emph{ultrafilter}. For a subset \( A \subseteq \mathbb{N}  \), by \( u(A) \) we mean the set of all ultrafilters containing \( A \). u(A) is nonempty - lemma
+
+
+
+
+
+Define the collection \[ \hat{\mathcal{F} } = \left \{ B \subseteq \mathbb{N} : u(B) \cap \bigcap_{A \in \mathcal{F} ^{\ast} } u(A) }^{}  \right \} . \] We claim that \( \hat{\mathcal{F} } = \mathcal{F} ^{\ast\ast}  \). Indeed, if \( B \in \hat{\mathcal{F} } \) then there is an ultrafilter \( U \) containing \( \mathcal{F}^{\ast}  \cup \{ B \} \). Thus \( A \cap B \in U\) for each set \( A \in \mathcal{F}^{\ast}  \). Since filters do not contain \( \emptyset  \), it follows that \( B \in \mathcal{F}^{\ast\ast}  \). Now if \( B \in \mathcal{F}^{\ast\ast}  \), then \( B \) intersects every set \( A \in \mathcal{F} ^{\ast } \).
+\end{proof}
+We expand on the proof of a result due to Glasner:
+\begin{proposition}
+A family \( \mathcal{F}  \) has the Ramsey property if and only if its dual \( \mathcal{F} ^{\ast}  \) is a filter.
+\end{proposition}
+\begin{proof}
+Let us first assume that the family \( \mathcal{F}  \) has the Ramsey property, and fix \( A, B \in \mathcal{F} ^{\ast}  \). To prove that \( A \cap B \in \mathcal{F} ^{\ast}  \), it suffices to fix a set \( E \in \mathcal{F}  \) and prove that \( E \) intersects \( A \cap B \). Write \[ E = (E \cap A) \cup (E \setminus A). \] From the Ramsey property, either \( E \cap A \in \mathcal{F}  \) or \( E \setminus A \in \mathcal{F}  \). Note that \( E \setminus A \notin \mathcal{F}  \), as otherwise \( (E \setminus A) \cap A \neq \emptyset \). Hence \( E \cap A \in \mathcal{F}  \), and since \( B \in \mathcal{F} ^{\ast}  \) we have \( E \cap A \cap B \neq \emptyset  \) as needed.
+
+On the other hand, suppose \( \mathcal{F} ^{\ast}  \) is a filter. From (lemma) \( \mathcal{F}  \) is an ultrafilter. But then \( \mathcal{F}  \) must have the Ramsey property, otherwise there is a set \( A = A_1 \cup \cdots \cup A_{n}   \) in \( \mathcal{F}  \) with \( A_{k} \notin \mathcal{F}  \) for every \( k \in \{ 1, 2, \hdots , n \} \). But then \( \mathcal{F} \cup \{ A_1 \}  \) is a filter containing \( \mathcal{F}  \), which is a contradiction.
+\end{proof}
+\end{comment}
