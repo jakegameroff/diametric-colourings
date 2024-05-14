@@ -2,4 +2,18 @@
 \section{Introduction}
 Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey [1] proved that for each \( n \in \mathbb{N}  \) there is a sufficiently large \( N \in \mathbb{N}  \) such that in any red-blue coloring of the edges of the complete graph \( K_{N} \) there is a set of \( n \) vertices joined by pairwise monochromatic edges (i.e., a monochromatic clique).  This raises a natural question: given \( n, k \in \mathbb{N}  \), is there an integer \( N \in \mathbb{N} \) such that in any edge-coloring of \( K_{N}  \) in \( k \) colors there is a monochromatic clique of size \( n \)? Its positive answer is due to (authors) [2]. Analogously, in what follows, we generalize and strengthen a Ramsey-type coloring theorem of Protasov and Protasova [3] to hold for $k$ colors, where \( k \in \mathbb{N}  \).
 
-Fix a metric space \( (X,d) \) and let \( k \in \mathbb{N}  \). A mapping \( \chi : [X]^{k} \to [k]  \) is called an \emph{isometric coloring} if \( \chi (A_1) = \chi (A_2) \) whenever \( A_1, A_2 \) is a pair of isodiametric \( k \)-element subsets of \( X \).
+Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \). A \emph{\( k \)-coloring} on \( X \) is a map \( \chi : [X]^{k} \to [k]  \) which assigns one of \( k \) colors to each \( k \)-element subset of \( X \). For a given \( k \)-coloring \( \chi \), we would like to find a set \( A \subseteq X \) such that \( \chi ([A]^{k}) = \{ c \}  \) for some \( c \in [k] \); in this case, we call \( A \) \emph{\( \chi \)-monochrome}. In this context, the ``large" objects containing underlying structure in \( (X,d) \) given a coloring \( \chi \) are free ultrafilters [4].
+
+A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all sets \( A, B \subseteq X \):
+\begin{enumerate}[leftmargin=1.2cm]
+	\item \( \emptyset  \notin \mathcal{F}  \) and \( X \in \mathcal{F}  \);
+	\item If \( A \in \mathcal{F} \) and \( A \subseteq B \) then \( B \in \mathcal{F}  \); and
+	\item If \( A, B \in \mathcal{F}  \) then \( A \cap B \in \mathcal{F}  \).
+\end{enumerate}
+A filter \( \mathcal{F}  \) is called an \emph{ultrafilter} if it is not properly contained in a filter on \( X \). A filter \( \mathcal{F}  \) is called \emph{free} if \( \medcap \mathcal{F} = \emptyset  \). Free filters are ``spread out" throughout the space and ultrafilters are maximal filters, so we consider \emph{free ultrafilters} as ``large" objects.
+
+
+
+\begin{comment}
+	A mapping \( \chi : [X]^{k} \to [k]  \) is called an \emph{isometric coloring} if \( \chi (A_1) = \chi (A_2) \) whenever \( A_1, A_2 \) is a pair of isodiametric \( k \)-element subsets of \( X \).
+\end{comment}

@@ -8,12 +8,13 @@
 %\setlist{nolistsep}
 %\onehalfspacing
 
+
 %%%—definitions, theorems, propositions, etc.—%%%
 \usepackage[dvipsnames]{xcolor}
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfsetup{skipabove=1em,skipbelow=0em, rightmargin=1em, innertopmargin=5pt, innerbottommargin=10pt}
-
+\newcommand*{\medcap}{\mathbin{\scalebox{1.2}{\ensuremath{\cap}}}}
 \declaretheoremstyle[headfont=\bfseries, bodyfont=\itshape]{definition}
 \declaretheoremstyle[headfont=\bfseries\color{black}, bodyfont=\itshape]{thm}
 \declaretheoremstyle[headfont=\bfseries\color{black}, bodyfont=\itshape]{prop}
