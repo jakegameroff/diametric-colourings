@@ -1,13 +1,5 @@
 %! TeX root: ../main.tex
 \section{Ultrametric Analysis}
-Recall that a \emph{metric} on a set \( X \) is a function \( d : X \times X \to [0, +\infty)  \) such that for every \( x, y, z \in X \) the following hold:
-\begin{enumerate}[(1), leftmargin=1.2cm]
-	\item \( d(x,y) = 0 \Leftrightarrow x = y \);
-	\item \( d(x,y) = d(y,x) \); and
-	\item \( d(x,y) \leq d(x,z) + d(z,y)\).
-\end{enumerate}
-
-The pair \( (X,d) \) is called a \emph{metric space}. A stronger version of (3) is called the \emph{strong triangle inequality}: \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \} . \] If the strong triangle inequality holds, then we call \( d \) an \emph{ultrametric} and \( (X,d) \) an \emph{ultrametric space}. In what follows, unless otherwise specified, \( (X, d) \) (or simply \( X \)) is an ultrametric space.
 \subsection{The space \( \mathbb{N} ^{\mathbb{N} } \) and \( \varepsilon  \)-chains} In this short section, we provide some examples of ultrametric spaces. In particular, we construct ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} } $ and general uniformly disconnected metric spaces.
 
 The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise.
