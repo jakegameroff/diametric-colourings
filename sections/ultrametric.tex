@@ -66,10 +66,10 @@ Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{d
 \end{proof}
 
 \begin{lemma}
-Let \( A \subseteq X \) and consider any ball \( B_{\varepsilon } (x) \) in \( X \). If \(B = A \cap B_{\varepsilon } (x) \neq \emptyset  \) and \( |B| \geq 2 \) then \( B \) is a ball.
+Let \( A \subseteq X \) and consider any ball \( B \) in \( X \). If \( A \cap B \neq \emptyset  \) then \( B \) is a ball in the ultrametric space \( (A, d) \).
 \end{lemma}
 \begin{proof}
-	Since \( A \cap B_{\varepsilon } (x) \neq \emptyset  \), there is a point \( a \in A \cap B_{\varepsilon } (x) \). Set \( r = \operatorname{diam}  (A \cap B_{\varepsilon } (x)) \). Then from (lemma), \[ r = \operatorname{diam} (A \cap B_{\varepsilon } (x)) =  \sup_{} \{ d(a,t) : t \in A \cap B_{\varepsilon } (x)\}. \] We claim that \( B_{r} (a) = A \cap B_{\varepsilon } (x) \). To this end, first fix \( t \in B_{r} (a) \) so that \( d(a, t) < \operatorname{diam}  (A \cap B_{\varepsilon } (x)) \) 
+Since \( A \cap B \neq \emptyset \) there is a point \( a \in A \cap B \). Write \( B = B_{\varepsilon } (x) \) for some \( x \in X \) and \( \varepsilon > 0 \). To show that \( A \cap B \) is a ball in \( A \), we must find a radius \( r > 0 \) such that for every \( t \in A \cap B\), \( d(a,t) < r \). Set \( r = \varepsilon  \) and fix \( t \in A \cap B \). Then \( a, t \in B \) so that \( d(a,x) < \varepsilon  \) and \( d(t,x) < \varepsilon  \). Using the strong triangle inequality, \[ d(a,t) \leq \max \{ d(a,x) , d(t,x) \} < \varepsilon = r. \] Therefore, \( A \cap B \) is a ball in \( A \).
 \end{proof}
 \begin{lemma}
 Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
