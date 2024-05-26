@@ -66,11 +66,16 @@ Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{d
 \end{proof}
 
 \begin{lemma}
-Let \( A \subseteq X \) and consider any ball \( B \) in \( X \). If \( A \cap B \neq \emptyset  \) then \( B \) is a ball in the ultrametric space \( (A, d) \).
+Let \( A \subseteq X \) and consider any ball \(B_{\varepsilon } (x) \) in \( X \). If \( B_{\varepsilon } (x) \) meets \( A \) then \( A \cap B_{\varepsilon } (x) \) is a ball in the space \( (A, d) \).
 \end{lemma}
 \begin{proof}
-Since \( A \cap B \neq \emptyset \) there is a point \( a \in A \cap B \). Write \( B = B_{\varepsilon } (x) \) for some \( x \in X \) and \( \varepsilon > 0 \). To show that \( A \cap B \) is a ball in \( A \), we must find a radius \( r > 0 \) such that for every \( t \in A \cap B\), \( d(a,t) < r \). Set \( r = \varepsilon  \) and fix \( t \in A \cap B \). Then \( a, t \in B \) so that \( d(a,x) < \varepsilon  \) and \( d(t,x) < \varepsilon  \). Using the strong triangle inequality, \[ d(a,t) \leq \max \{ d(a,x) , d(t,x) \} < \varepsilon = r. \] Therefore, \( A \cap B \) is a ball in \( A \).
+Since \( A \cap B_{\varepsilon } (x) \neq \emptyset  \), there is a point \( a \in A \cap B_{\varepsilon } (x) \). Let \( B_{A} = \{ t \in A : d(t,a) < \varepsilon  \}  \) be a ball in \( A \). We show that \( A \cap B_{\varepsilon } (x) = B_{A}  \).
+
+Note from (lemma) that \( a \) is the center of \( B_{\varepsilon } (x) \) so that \( A \cap B_{\varepsilon } (x) = A \cap B_{\varepsilon } (a) \). Then if \( t \in A \cap B_{\varepsilon } (x) \) we have \( t \in A \cap B_{\varepsilon } (a) \) so that \( d(t, a) < \varepsilon  \) and hence \( t \in B_{A} \). On the other hand, if \( t \in B_{A}  \) then from the strong triangle inequality we obtain \[ d(x, t) \leq \max \{ d(x,a), d(a,t) \} < \varepsilon , \] since \( a \in B_{\varepsilon } (x) \). Hence, \( t \in A \cap B_{\varepsilon } (x) \) completes the proof.
 \end{proof}
+\begin{comment}
+Since \( A \cap B \neq \emptyset \) there is a point \( a \in A \cap B \). Write \( B = B_{\varepsilon } (x) \) for some \( x \in X \) and \( \varepsilon > 0 \). To show that \( A \cap B \) is a ball in \( A \), we must find a radius \( r > 0 \) such that for every \( t \in A \cap B\), \( d(a,t) < r \). Set \( r = \varepsilon  \) and fix \( t \in A \cap B \). Then \( a, t \in B \) so that \( d(a,x) < \varepsilon  \) and \( d(t,x) < \varepsilon  \). Using the strong triangle inequality, \[ d(a,t) \leq \max \{ d(a,x) , d(t,x) \} < \varepsilon = r. \] Therefore, \( A \cap B \) is a ball in \( A \).
+\end{comment}
 \begin{lemma}
 Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
 \end{lemma}
@@ -83,3 +88,6 @@ If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B
 \begin{proof}
 Suppose for a contradiction that there is a point \( t \in X \setminus B_{\varepsilon} (x) \) such that for every \( r > 0 \) the ball \( B_{r}(t) \) is not contained in \( X \setminus B_{\varepsilon } (x) \), so \( B_{r} (t) \cap B_{\varepsilon} (x) \neq \emptyset \). Setting \( r = \varepsilon  \) and using (lemma), we have \( B_{\varepsilon} (t) \subseteq B_{\varepsilon } (x) \) or \( B_{\varepsilon} (t) \subseteq B_{\varepsilon} (x) \). In either case, (lemma) implies equality. But then \( t \in X \setminus B_{\varepsilon } (x) = X \setminus B_{\varepsilon } (t) \) is a contradiction. Hence \( X \setminus B_{\varepsilon } (x) \) is a union of open balls so that \( B_{\varepsilon } (x) \) is closed in \( X \).
 \end{proof}
+
+
+
