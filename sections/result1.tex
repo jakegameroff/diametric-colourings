@@ -1,6 +1,24 @@
 \section{Main Result}
-\subsection{Some Lemmas and Preliminaries}
+\subsection{Preliminaries}
 %% def ctbl === injects into N
+
+
+In the present work, we extend a result due to (Authors) [3]. A coloring \( \chi : [X]^{2} \to [k] \) of the two-element subsets of \( X \) is called \emph{isometric} if \( \chi (\{ x_1, y_1 \} ) = \chi ( \{ x_2, y_2 \} ) \) whenever \( d(x_1,y_1) = d(x_2, y_2) \). A free ultrafilter \( \mathcal{F}  \) on \( X \) is called \emph{metrically Ramsey} if every isometric coloring \( \chi \) admits a set \( A \in \mathcal{F}  \) such that every two-element subset of \( A \) receives the same color.
+
+With \( k = 2 \), (Authors) present the following theorem.
+\begin{theorem}
+Fix an infinite ultrametric space \( X \). There is a sequence \( (x_{n}) \) in \( X \) such that every free ultrafilter \( \mathcal{F}  \) containing \( (x_{n}) \) is metrically Ramsey.
+\end{theorem}
+
+It is natural to question whether similar structure exists when coloring a larger class of subsets of \( X \). The positive answer to this question is the keynote of this paper. In this connection, we will analyze the family \( \Gamma_{X}  \) of all compact subsets of \( X \).
+
+Before proceeding to the main result, we first introduce some terminology. The map \( \chi : \Gamma_{X}  \to [k] \) is called a \emph{diametric coloring} if \( \chi (A_1) = \chi (A_2) \) for every pair \( A_1, A_2 \) of compact subsets of \( X \) with \( \operatorname{diam} A_1 = \operatorname{diam} A_2  \). Since finite sets are compact, clearly every diametric coloring is isometric.
+
+A subset \( A \) of \( X \) is called \emph{monochrome} if its compact subsets receive the same color; that is, there is a color \( \varphi \in [k] \) such that \( \chi (\Gamma_{A} ) = \{ \varphi  \}  \). A free ultrafilter \( \mathcal{F}  \) on \( X \) is called \emph{diametrically Ramsey} if for every diametric coloring \( \chi \) there is a monochrome set \( A  \in \mathcal{F}  \).
+
+\subsection{A Technical Lemma} We note that (authors) construct \( (x_{n}) \) using the following lemma, whose proof is provided for the sake of completeness [2].
+
+
 \begin{lemma}
 Let \( (X, d) \) be an infinite metric space. Then there is a sequence \( \{ x_{n}  \}_{n = 1} ^{\infty}  \) of distinct points in \( X \) such that either
 \begin{enumerate}[leftmargin = 1.2cm]
@@ -16,33 +34,25 @@ Otherwise, \( d(x, X) \) is finite for every \( x \in X \). Fix \( x_0 \in X \) 
 
 For \( n \geq 2 \), we choose \( x_{n}  \) and define \( E_{n}  \) inductively as follows. As above, let \( \ell_{n} \in d(x_{n-1} , X) \) be non-zero and let \( E_{n}  \) be a countable subset of \( X \) with \( E_{n} \subseteq \{ x \in X : d(x_{n-1} , x) = \ell_{n} \} . \) Again, we choose \( x_{n} \in E_{n}  \) and observe that \( d(x_{n-1} , E_{n} ) = \{ \ell_{n}  \}  \). Continuing this way, we obtain the sequence from (2).
 \end{proof}
+\subsection{Main Result} We are now ready to state the main result.
 
-Set \( k \in \mathbb{N} \) and let \( X \) be a metric space. A \( k \)-\textbf{coloring} on \( X \) is a function \( \chi  : [X]^{k} \to [k] \), where \( [X]^{k} = \{ \{ x_1, x_2, \ldots, x_{k}  \} : x_{i} \in X, \ \forall i \in [k]\}   \) is the set of all \( k \) element subsets of \( X \). A subset \( A \subseteq X \) is called \( \chi \)-\textbf{monochrome} if \( \chi \) is constant on \( [A]^{k}  \). The coloring \( \chi \) is called \( k \)-\textbf{isometric} if \( \chi (A_1) = \chi (A_2)  \) whenever the pair \( A_1, A_2 \in [X]^{k}  \) of \( k \) element subsets satisfy \( \operatorname{diam}A_1 = \operatorname{diam}A_2  \).
-
-A free ultrafilter \( \mathcal{F}  \) on \( X \) is called \( k \)-\textbf{Ramsey} with respect to a collection \( \mathcal{C}  \) of colorings on \( X \) if for every coloring \( \chi \in \mathcal{C}  \) there is a set \( A  \in \mathcal{F}  \) such that \( [A]^{k}  \) is \( \chi \)-monochrome.
-\subsection{Main Result}
-(Authors) in [3] prove that every free ultrafilter on an infinite ultrametric space \( X \) is \( 2 \)-Ramsey with respect to the class of \( 2 \)-isometric colorings on \( X \). In this particular case, a coloring \( \chi \) is \( 2 \)-isometric if and only if all points \( x_1, x_2, y_1, y_2 \in X \) with \( d(x_1, y_1) = d(x_2, y_2) \) satisfy \( \chi (\{ x_1, y_1 \}) = \chi (\{ x_2, y_2 \} ) \). (Authors) leverage the properties of the ultrametric coupled with this observation and (lemma) to prove the main result when \( k = 2 \). We expand on this approach, strengthening their result to hold for all \( k \)-colorings in the particular case of ultrametric spaces.
 
 \begin{theorem}
-Let \( (X,d) \) be an infinite ultrametric space and let \( k \) be a positive integer. Let \(E = \{ c_{n}  \}_{n = 1} ^{\infty}  \) be a sequence of points obtained as in (lemma). Then every free ultrafilter \( \mathcal{F}  \) in \( X \) containing \( E \) is \( k \)-Ramsey with respect to the collection \( \mathcal{C}  \) of \( k \)-isometric colorings on \( X \).
+Fix an infinite ultrametric space \( X \). There is a sequence \( (x_{n}) \) in \( X \) such that every free ultrafilter \( \mathcal{F}  \) containing \( (x_{n}) \) is diametrically Ramsey.
 \end{theorem}
 \begin{proof}
-Let \( \chi \in \mathcal{C}  \) be a \( k \)-isometric coloring on \( X \) and fix a free ultrafilter \( \mathcal{F}  \) which contains \( E \).
+Let \( \chi \) be any diametric coloring on \( X \) and fix a free ultrafilter \( \mathcal{F}  \) containing the sequence \( (x_{n} ) \) as obtained in (lemma).
 
-Let \( h  : E \to \mathbb{R^{+}} \) be a fixed map. How we define \( h \) will depend on the sequence \( E \) attained from (lemma), so we will proceed in this regard later on. Moreover, suppose \( f : h (E) \to [k] \) is any mapping satisfying \( f(h(c_{\ell} )) = \chi (A) \) whenever \( A \in [X]^{k}  \) is a \( k \) element subset of \( X \) with \( \operatorname{diam}A = h(c_{\ell} ) \). Finally, we set \( c = f \circ h  \).
+Let \( h  : (x_{n}) \to \mathbb{R^{+}} \) be a fixed map. How we define \( h \) depends on \( (x_{n}) \), so we proceed in this regard later on. Moreover, suppose \( f : \mathbb{R}^{+} \to [k] \) is any mapping satisfying \( f(h(x_{n})) = \chi (A) \) whenever \( A \in \Gamma_{X} \) is a compact subset of \( X \) with \( \operatorname{diam}A = h(x_{n}) \). Finally, we set \( c = f \circ h  \).
 
-Write \( E = c ^{-1} ([k]) = \cup_{j=1}^{k} c^{-1} (\{ j \} )  \) and observe that since \( E \in \mathcal{F}  \), (lemma) implies that there is a color \( \varphi \in [k] \) with \( c ^{-1} (\{ \varphi  \} ) \in \mathcal{F}   \). We set \( A = c ^{-1} (\{ \varphi  \} )  \) and complete the proof by showing that \( A \) is \( \chi \)-monochrome. In particular, we will show that each \( k \) element set in \( [A]^{k}  \) has color \( \varphi \).
+Write \( (x_{n}) = c ^{-1} ([k]) = \medcup_{j=1}^{k} c^{-1} (\{ j \} )  \) and observe that since \( E \in \mathcal{F}  \), (lemma) implies that there is a color \( \varphi \in [k] \) with \( c ^{-1} (\{ \varphi  \} ) \in \mathcal{F}   \). We set \( A = c ^{-1} (\{ \varphi  \} )  \) and complete the proof by showing that \( A \) is monochrome. Specifically, we show that if \( K \) is a compact subset of \( A \) then \( \chi (K) = \varphi  \). So fix such a set \( K \).
 
+Since \( K \) is compact, there are points \( x_{i} , x_{j} \in K \) with \( i < j \) and \( d(x_{i} , x_{j}) = \operatorname{diam} K \), applying (lemma). We now consider the conditions on \( (x_{n}) \) as described in (lemma), and define \( h \) accordingly to complete the proof.
 
+\textbf{Case 1.} We will first assume that case (1) of (lemma) holds, namely that \( (x_{n}) \) is a sequence of distinct points in \( X \) where \( \{ d(x_0, x_{n} )  \}_{n = 1} ^{\infty} \) is strictly monotone for some point \( x_0 \in X \). In this case, \( h \) will indicate the distance to \( x_0 \) from a term \( x_{n} \in E \), given by \( h (x_{n}) = d(x_0, x_{n} ) \).
 
+If \( h  \) is strictly increasing, then we have \( d(x_0, x_{i} ) < d(x_0, x_{j} ) \). Hence (lemma) implies that \( d(x_{i} , x_{j} ) = d(x_{0} , x_{j} ) \), since \( d \) is an ultrametric. Otherwise \( d(x_0, x_{i} ) > d(x_0, x_{j} ) \) so that \( d(x_{i} , x_{j} ) = d(x_0, x_{i} ) \) using (lemma) once more. Possibly swapping the symbols \( i,j \), we assume the latter case holds. Since \( \chi \) is diametric, \( x_{j} \in A \), and \( \operatorname{diam} K = d(x_{i} , x_{j} ) = d(x_0, x_{j} )  \), we have \[c(x_{j} ) = f(d(x_0, x_{j} )) = \chi (K) = \varphi , \] as needed.
 
-Let \( n_1 < n_2 < \cdots < n_{k}  \) be fixed positive integers and consider the \( k \) element subsequence \(C_{k} = \{ c_{n_1} , c_{n_2} , \hdots , c_{n_{k} }   \} \in [A]^{k} \) of \( E \). Assume integers \( n_{i} < n_{j}  \) are such that \[ \{ c_{n_{i} } , c_{n_{j} }  \} = \underset{\{ x, y \} \subseteq C_{k}  }{\operatorname{arg\,max}} \ d(x,y); \] that is, \( d(c_{n_{i} } , c_{n_{j} }) = \operatorname{diam}C_{k}  \). We now consider the conditions on \( E \) as described in (lemma), and define \( h \) accordingly to complete the proof.
-
-\textbf{Case 1.} We will first assume that case (1) of (lemma) holds, namely that \( \{ c_{n}  \} _{n=1} ^{\infty}  \) is a sequence of distinct points in \( X \) where \( \{ d(c_0, c_{n} )  \}_{n = 1} ^{\infty} \) is strictly monotone. In this case, \( h \) will indicate the distance to \( c_0 \) from a term \( c_{\ell} \in E \), given by \( h (c_{\ell} ) = d(c_0, c_{\ell} ) \).
-
-If \( h  \) is strictly increasing, then we have \( d(c_0, c_{n_{i} } ) < d(c_0, c_{n_{j} } ) \). Hence (lemma) implies that \( d(c_{n_{i} } , c_{n_{j} } ) = d(c_0, c_{n_{j} } ) \), since \( d \) is an ultrametric. Otherwise \( d(c_0, c_{n_{i} } ) > d(c_0, c_{n_{j} }) \) so that \( d(c_{n_{i} } , c_{n_{j} } ) = d(c_0, c_{n_{i} } ) \) using (lemma) once more. Possibly swapping the symbols \( i,j \), we assume the latter case holds. Since \( c_{n_{j} } \in A \) and \( \operatorname{diam}C_{k} = d(c_{n_{i} } , c_{n_{j} } ) = d(c_0, c_{n_{j} } )  \), we have \( f(d(c_0, c_{n_{j} } )) = \chi (C_{k}) = \varphi \), as needed.
-
-\textbf{Case 2.} We now assume that case (2) of (lemma) applies to \( \{ c_{n}  \}_{n = 1} ^{\infty}  \). Namely, for each \( n \in \mathbb{N}  \) and \( i,j \geq n \) we have \( d(c_{n} , c_{i} ) = d(c_{n} , c_{j} ) \). Define \( h : E \to \mathbb{R}^{+}  \) by \( h(c_{\ell}) = d(c_{\ell} , c_{\ell + 1}) \), and note that \( h(c_{\ell}) = d(c_{\ell} , c_{j})  \) for every \( j > \ell \). Since \( n_{i} < n_{j}  \), we have \( h(c_{n_{i} }) = d(c_{n_{i} } , c_{n_{j} } )\) and, as desired, \[ f(h(c_{n_{i} } )) = f(d(c_{n_{i} } , c_{n_{j} } )) = \chi (C_{k}) = \varphi. \]
-
-This completes the proof, since \( A \) is \( \chi \)-monochrome in both cases.
+\textbf{Case 2.} We now assume that case (2) of (lemma) applies to \( (x_{n}) \). Namely, for each \( n \in \mathbb{N}  \) and \( i,j \geq n \) we have \( d(x_{n} , x_{i} ) = d(x_{n} , x_{j} ) \). Define \( h : E \to \mathbb{R}^{+}  \) by \( h(x_{n} ) = d(x_{n} , x_{n+1} )\), and note that \( h(x_{n} ) = d(x_{n} , x_{j}) \) for every \( j > n \). Again, since \( \chi \) is diametric and \( i < j\), we have \( h(x_{i} ) = d(x_{i} , x_{j} )\) and, as desired, \[ c(x_{i}) = f(d(x_{i} , x_{j} )) = \chi (K) = \varphi. \] This completes the proof, since \( A \) is \( \chi \)-monochrome in both cases.
 \end{proof}
+\todo{Rewrite abstract, add text throughout, more results, conclusion, checking things, clean up, acknowledgements, email, formatting, etc. A lot more to do!}

@@ -58,12 +58,6 @@ Let \( B_{\varepsilon } (x) \) be an open ball in \( X \). Then \( B_{\varepsilo
 \begin{proof}
 Fix \( y \in B_{\varepsilon } (x) \) so that \( d(x,y) < \varepsilon  \). If \( t \in B_{\varepsilon } (y) \) then \( d(y,t) < \varepsilon  \). Then \( t \in B_{\varepsilon } (x) \) since \[ d(x, t) \leq \max \{ d(x,y), d(y,t) \} < \varepsilon . \] The reverse inclusion follows symmetrically as \( x \in B_{\varepsilon } (y) \).
 \end{proof}
-\begin{lemma}
-Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{diam} A = \sup \{ d(a, x) : x \in A \}   \).
-\end{lemma}
-\begin{proof}
-	Set \( u = \sup \{ d(a,x) : x \in A \}  \) and fix \( x,y \in A \). Then \[ d(x,y) \leq \max \{ d(x, a) , d(a, y) \} = \max \{ d(a,x), d(a,y) \} \leq u  \] so that \( u \) is an upper bound of \( D = \{ d(x,y) : x,y \in A \}  \). Since \( u = \sup_{} \{ d(a,x) : x \in A \}  \), for any given \( \varepsilon > 0 \), there exists a point \( x_{\varepsilon } \in A \) with \( u \leq d(a, x_{\varepsilon }) + \varepsilon   \). But \( a, x_{\varepsilon } \in A \) so that \( u = \sup D = \operatorname{diam} A \) which completes the proof.
-\end{proof}
 
 \begin{lemma}
 Let \( A \subseteq X \) and consider any ball \(B_{\varepsilon } (x) \) in \( X \). If \( B_{\varepsilon } (x) \) meets \( A \) then \( A \cap B_{\varepsilon } (x) \) is a ball in the space \( (A, d) \).
@@ -88,6 +82,25 @@ If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B
 \begin{proof}
 Suppose for a contradiction that there is a point \( t \in X \setminus B_{\varepsilon} (x) \) such that for every \( r > 0 \) the ball \( B_{r}(t) \) is not contained in \( X \setminus B_{\varepsilon } (x) \), so \( B_{r} (t) \cap B_{\varepsilon} (x) \neq \emptyset \). Setting \( r = \varepsilon  \) and using (lemma), we have \( B_{\varepsilon} (t) \subseteq B_{\varepsilon } (x) \) or \( B_{\varepsilon} (t) \subseteq B_{\varepsilon} (x) \). In either case, (lemma) implies equality. But then \( t \in X \setminus B_{\varepsilon } (x) = X \setminus B_{\varepsilon } (t) \) is a contradiction. Hence \( X \setminus B_{\varepsilon } (x) \) is a union of open balls so that \( B_{\varepsilon } (x) \) is closed in \( X \).
 \end{proof}
+\begin{lemma}
+Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{diam} A = \sup \{ d(a, x) : x \in A \}   \).
+\end{lemma}
+\begin{proof}
+	Set \( u = \sup \{ d(a,x) : x \in A \}  \) and fix \( x,y \in A \). Then \[ d(x,y) \leq \max \{ d(x, a) , d(a, y) \} = \max \{ d(a,x), d(a,y) \} \leq u  \] so that \( u \) is an upper bound of \( D = \{ d(x,y) : x,y \in A \}  \). Since \( u = \sup_{} \{ d(a,x) : x \in A \}  \), for any given \( \varepsilon > 0 \), there exists a point \( x_{\varepsilon } \in A \) with \( u \leq d(a, x_{\varepsilon }) + \varepsilon   \). But \( a, x_{\varepsilon } \in A \) so that \( u = \sup D = \operatorname{diam} A \) which completes the proof.
+\end{proof}
+\begin{comment}
+\subsection{Spherical Completeness} The space \( (X,d) \) is called \emph{spherically complete} if every decreasing sequence of closed balls has a non-empty intersection; that is, if \( \{ B_{n}  \}_{n = 1} ^{\infty}  \) is a sequence of closed balls in \( X \) with \( B_{k+1}  \subseteq B_{k}  \) for each \( k \in \mathbb{N}  \), then \( \medcap_{n=1}^{\infty}  B_{n} \neq \emptyset  \). For example, all compact metric spaces are spherically complete since they have the finite intersection property (cite).
 
+It turns out that the strong triangle inequality coupled with spherical completeness yield some elegant results regarding best approximations [1]. In the following lemma, we extend the approach used in these findings to investigate the diameters of sets in spherically complete ultrametric spaces.
 
+\begin{lemma}
+Let \( (X,d) \) be a spherically complete ultrametric space with a non-empty bounded subset \( A \subseteq X \). Then \( A \) admits a pair of points \( a,b \in A \) with \( d(a,b) = \operatorname{diam} A \).
+\end{lemma}
+\begin{proof}
+Since \( A \) is non-empty and bounded, there is a point \( a \in A \) and the quantity \( \operatorname{diam} A < \infty \). For each \( n \in \mathbb{N}  \), define \[ B_{n} = \{ x \in A : d(a,x) \leq \operatorname{diam} A + 1/n \}. \] Then \( \{ B_{n}  \}_{n = 1} ^{\infty}  \) is a decreasing sequence of balls, so spherical completeness yields a point \( b \in \medcap_{n=1} ^{\infty} B_{n}  \).
+
+From (lemma), we have \( \operatorname{diam} A = \sup \{ d(a,x) : x \in A \}   \). It follows that \( d(a,b) = \operatorname{diam} A \). Indeed, for each \( x \in A \), \[ d(a,x) \leq \max \{ d(a,b), d(b,x) \}  \]
+
+\end{proof}
+\end{comment}
 

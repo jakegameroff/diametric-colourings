@@ -1,6 +1,17 @@
 %! TeX root: ../main.tex
 \section{Introduction}
-Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey [1] proved that for each \( n \in \mathbb{N}  \) there is a sufficiently large \( N \in \mathbb{N}  \) such that in any red-blue coloring of the edges of the complete graph \( K_{N} \) there is a set of \( n \) vertices joined by pairwise monochromatic edges (i.e., a monochromatic clique).  This raises a natural question: given \( n, k \in \mathbb{N}  \), is there an integer \( N \in \mathbb{N} \) such that in any edge-coloring of \( K_{N}  \) in \( k \) colors there is a monochromatic clique of size \( n \)? Its positive answer is due to (authors) [2]. Analogously, in what follows, we generalize and strengthen a Ramsey-type coloring theorem of Protasov and Protasova [3] to hold for $k$ colors, where \( k \in \mathbb{N}  \).
+Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey [1] proved that for each \( k \in \mathbb{N}  \) there is a sufficiently large \( n \in \mathbb{N}  \) such that in any red-blue coloring of the edges of the complete graph \( K_{n} \) there is a set of \( k \) vertices joined by edges of the same color.
+
+Another seminal result is Van der Waerden's theorem, which states that for all positive integers \( r, k \in \mathbb{N}  \), there is a large enough \( n \in \mathbb{N}  \) such that if we color the integers in \( [n] \coloneqq \{ 1,2,\hdots ,n \}  \) using \( k \) colors, one can always find a set of \( r \) monochromatic integers in arithmetic progression [2].
+
+Motivated by these kinds of classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will color the compact subsets of the space and search for an infinite set whose compact subsets receive the same color. We formalize this shortly, but we need to introduce some terminology first.
+
+Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. 
+
+
+
+\newpage
+This raises a natural question: given \( n, k \in \mathbb{N}  \), is there an integer \( N \in \mathbb{N} \) such that in any edge-coloring of \( K_{N}  \) in \( k \) colors there is a monochromatic clique of size \( n \)? Its positive answer is due to (authors) [2]. Analogously, in what follows, we generalize and strengthen a Ramsey-type coloring theorem of Protasov and Protasova [3] to hold for $k$ colors, where \( k \in \mathbb{N}  \).
 
 Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \). A \emph{\( k \)-coloring} on \( X \) is a map \( \chi : [X]^{k} \to [k]  \) which assigns one of \( k \) colors to each \( k \)-element subset of \( X \). For a given \( k \)-coloring \( \chi \), we would like to find a set \( A \subseteq X \) such that \( \chi ([A]^{k}) = \{ c \}  \) for some \( c \in [k] \); in this case, we call \( [A]^{k}  \) \emph{\( \chi \)-monochrome}.
 
