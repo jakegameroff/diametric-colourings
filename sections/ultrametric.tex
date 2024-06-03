@@ -2,7 +2,7 @@
 \section{Ultrametric Analysis}
 \subsection{The space \( \mathbb{N} ^{\mathbb{N} } \) and \( \varepsilon  \)-chains} In this short section, we provide some examples of ultrametric spaces. In particular, we construct ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} } $ and general uniformly disconnected metric spaces.
 
-The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise.
+The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise. This metric was first constructed by (guy) in (year) to (task) [3].
 
 The \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \) is the space of all sequences of natural numbers.
 \begin{example}
@@ -31,7 +31,7 @@ Clearly \( c \) is symmetric and non-negative. If \( x = y \) then clearly \( x,
 
 The last thing to prove is the strong triangle inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate. By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \( \gamma_1 \leq c(x,z) + \varepsilon  \) and \( \gamma_2 \leq c(z,y) + \varepsilon  \) such that \( x,z \) are \( \gamma_1 \)-connected and \( z,y \) are \( \gamma_2 \)-connected. Set \( \gamma = \max \{ \gamma_1, \gamma_2 \}\) and note that by combining the \( x,z \) and \( z,y \) chains it follows that \( x,y \) are \( \gamma \)-connected. Thus \[ c(x,y) \leq \gamma \leq \max \{ c(x,z), c(z,y) \} + \varepsilon . \] Since \( \varepsilon  \) was arbitrary, it follows that \( c(x,y) \leq \max \{ c(x,z), c(z,y) \} \).
 \end{proof}
-\subsection{Properties of ultrametric spaces}
+\subsection{Properties of ultrametric spaces} The strong triangle inequality is extremely powerful.
 \begin{lemma}
 If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(y,z) = d(x,z) \). (That is, every triangle in an ultrametric space is isosceles.)
 \end{lemma}
