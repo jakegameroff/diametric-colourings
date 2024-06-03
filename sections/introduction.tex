@@ -4,30 +4,34 @@ Ramsey Theory explores the underlying structure emerging in ``large enough" comp
 
 Another seminal result is Van der Waerden's theorem, which states that for all positive integers \( r, k \in \mathbb{N}  \), there is a large enough \( n \in \mathbb{N}  \) such that if we color the integers in \( [n] \coloneqq \{ 1,2,\hdots ,n \}  \) using \( k \) colors, one can always find a set of \( r \) monochromatic integers in arithmetic progression [2].
 
-Motivated by these kinds of classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will color the compact subsets of the space and search for an infinite set whose compact subsets receive the same color. We formalize this shortly, but we need to introduce some terminology first.
+Motivated by these kinds of classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will color the compact subsets of the space and search for an infinite set whose compact subsets receive the same color. We will formalize this shortly, but we need to introduce some terminology first.
 
-Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. 
+Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. For a family \( \mathcal{A} \) of subsets of \( X \), a \emph{\( k \)-coloring} of \( \mathcal{A}  \) is any mapping \( \chi : \mathcal{A} \to [k] \). We would like to find a set \( M \subseteq X \) and a color \( c \in [k] \) such that \( \chi(N) = c \) for every subset \( N \subseteq M \) with \(N \in \mathcal{A}  \). In this case, we say that \( M \) is \emph{monochrome}.
 
+In this context, the ``large" objects in \( X \) which we will work with are free ultrafilters [4]. A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all subsets \( A, B \subseteq X \):
+\begin{enumerate}[leftmargin=1.2cm]
+	
+	\item If \( A \in \mathcal{F} \) and \( A \subseteq B \) then \( B \in \mathcal{F}  \);
+	\item If \( A, B \in \mathcal{F}  \) then \( A \cap B \in \mathcal{F}  \);
+	\item \( \emptyset  \notin \mathcal{F}  \) and \( X \in \mathcal{F}  \).
+\end{enumerate}
+A filter \( \mathcal{F}  \) is called an \emph{ultrafilter} if it is not properly contained in a filter on \( X \). A filter \( \mathcal{F}  \) is called \emph{free} if \( \medcap \mathcal{F} = \emptyset  \). Hence free filters are ``spread out" throughout the space and ultrafilters are maximal filters, so we consider \emph{free ultrafilters} as ``large" objects in \( X \).
+
+Given that these are the large objects in focus, it is natural to ask whether there is a free ultrafilter \( \mathcal{F}  \) such that for every coloring of the \( r \)-element subsets of \( X \) there is a monochrome set \( M \in \mathcal{F}  \). It turns out that this question is undecidable in ZFC even with \( X = \mathbb{N}  \), though the statement is true if we accept continuum hypothesis [5]. Hence we must define more restrictive classes of colorings.
+
+To this end, (authors) introduce the following [3]. A coloring \( \chi : [X]^{2} \to \{ 0 , 1 \}  \) of the two-element subsets of \( X \) is called \emph{isometric} if \( \chi (\{ x_1, y_1 \} ) = \chi (\{ x_2, y_2 \} ) \) whenever \( d(x_1, y_1) = d(x_2, y_2) \). A free ultrafilter \( \mathcal{F}  \) is called \emph{metrically Ramsey} if for every isometric coloring of \( [X]^{2}  \) there is a monochrome set \( M \in \mathcal{F}  \).
+
+It turns out that in the particular case of ultrametric spaces, metrically Ramsey free ultrafilters are not too hard to construct. Recall that an \emph{ultrametric} \( d \) on a set \( X \) is a metric satisfying the \emph{strong triangle inequality}: for all \( x,y,z \in X \) \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \}.  \] (Authors) leverage the properties of the ultrametric to prove the following theorem.
+
+\begin{theorem}
+Fix an infinite ultrametric space \( X \). There is a sequence \( (x_{n}) \) in \( X \) such that every free ultrafilter \( \mathcal{F}  \) containing \( (x_{n}) \) is metrically Ramsey.
+\end{theorem}
 
 
 \newpage
-This raises a natural question: given \( n, k \in \mathbb{N}  \), is there an integer \( N \in \mathbb{N} \) such that in any edge-coloring of \( K_{N}  \) in \( k \) colors there is a monochromatic clique of size \( n \)? Its positive answer is due to (authors) [2]. Analogously, in what follows, we generalize and strengthen a Ramsey-type coloring theorem of Protasov and Protasova [3] to hold for $k$ colors, where \( k \in \mathbb{N}  \).
-
-Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \). A \emph{\( k \)-coloring} on \( X \) is a map \( \chi : [X]^{k} \to [k]  \) which assigns one of \( k \) colors to each \( k \)-element subset of \( X \). For a given \( k \)-coloring \( \chi \), we would like to find a set \( A \subseteq X \) such that \( \chi ([A]^{k}) = \{ c \}  \) for some \( c \in [k] \); in this case, we call \( [A]^{k}  \) \emph{\( \chi \)-monochrome}.
-
-In this context, the ``large" objects containing underlying structure in \( (X,d) \) are free ultrafilters [4]. A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all sets \( A, B \subseteq X \):
-\begin{enumerate}[leftmargin=1.2cm]
-	\item \( \emptyset  \notin \mathcal{F}  \) and \( X \in \mathcal{F}  \);
-	\item If \( A \in \mathcal{F} \) and \( A \subseteq B \) then \( B \in \mathcal{F}  \);
-	\item If \( A, B \in \mathcal{F}  \) then \( A \cap B \in \mathcal{F}  \).
-\end{enumerate}
-A filter \( \mathcal{F}  \) is called an \emph{ultrafilter} if it is not properly contained in a filter on \( X \). A filter \( \mathcal{F}  \) is called \emph{free} if \( \medcap \mathcal{F} = \emptyset  \). Free filters are ``spread out" throughout the space and ultrafilters are maximal filters, so we consider \emph{free ultrafilters} as ``large" objects in \( X \).
-
-Given this, one naturally asks if there is a free ultrafilter \( \mathcal{F}  \) such that for every coloring \( \chi \) there is a set \( A \in \mathcal{F}  \) so that \( [A]^{k}  \) is \( \chi \)-monochrome. It turns out that this question is undecidable in ZFC even with \( X = \mathbb{N}  \) and \( d(x,y) = |x-y| \), though the statement is true if we declare the continuum hypothesis as axiomatic [5]. Hence we must define more restrictive classes of colorings.
 
 To this end, we say that a \( k \)-coloring \( \chi : [X]^{k} \to [k]  \) is an \emph{isometric \( k \)-coloring} if \( \chi (A_1) = \chi (A_2) \) whenever \( A_1, A_2 \) is a pair of isodiametric \( k \)-element subsets of \( X \). A free ultrafilter \( \mathcal{F}  \) is called \emph{metrically Ramsey} if for every isometric \( k \)-coloring \( \chi \) there is a set \( A \in \mathcal{F}  \) such that \( [A]^{k}  \) is \( \chi \)-monochrome.
 
-Recall that an \emph{ultrametric} \( d \) on a set \( X \) is a metric satisfying the \emph{strong triangle inequality:} for all \( x,y,z \in X \) \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \}.  \]
 It turns out that in the particular case of ultrametric spaces, metrically Ramsey free ultrafilters are not too hard to construct. Indeed, Protasov and Protasova [6] prove that for \( k = 2 \) every infinite ultrametric space \( X \) contains a sequence \( (x_{n}) \) such that every free ultrafilter containing \( (x_{n}) \) is metrically Ramsey. The authors leverage the properties of the ultrametric coupled with (lemma) (to construct \( (x_{n}) \)) to prove the main result when \( k = 2 \). We expand on this approach, strengthening their result to hold for all \( k \)-colorings.
 
 In the following two sections, we review some elementary properties of ultrametrics and filters. We then prove the main result in (section 4).
