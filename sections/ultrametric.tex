@@ -1,13 +1,13 @@
 %! TeX root: ../main.tex
 \section{Ultrametric Analysis}
-\subsection{The space \( \mathbb{N} ^{\mathbb{N} } \) and \( \varepsilon  \)-chains} In this short section, we provide some examples of ultrametric spaces. In particular, we construct ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} } $ and general uniformly disconnected metric spaces.
+In this short section, we provide some interesting examples of ultrametric spaces and survey some of their fundamental properties.
+\subsection{Examples: The space \( \mathbb{N} ^{\mathbb{N} } \) and \( \varepsilon  \)-chains} The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise. This metric was first constructed by (guy) in (year) to (task) [3]. 
 
-The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise. This metric was first constructed by (guy) in (year) to (task) [3].
+However, there are much more interesting constructions. In this regard, we will construct ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} }$ and general uniformly disconnected metric spaces.
 
-The \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \) is the space of all sequences of natural numbers.
-\begin{example}
-For two distinct sequences \( x =  (x_{n}) \), \( y = (y_{n} ) \) of naturals, we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \), the first index at which \( x \) and \( y \) do not coincide. For distinct sequences \( x,y \in \mathbb{N} ^{\mathbb{N} }  \), set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,x) = 0 \). Then \( d \) is an ultrametric on \( \mathbb{N} ^{\mathbb{N} }  \).
-\end{example}
+We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \), which is the space of all sequences of natural numbers.
+
+For two distinct sequences \( x =  (x_{n}) \), \( y = (y_{n} ) \) in \( \mathbb{N}  \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. For distinct sequences \( x,y \in \mathbb{N} ^{\mathbb{N} }  \), set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,y) = 0 \) if \( x=y \). Then \( d \) is an ultrametric on \( \mathbb{N} ^{\mathbb{N} }  \).
 \begin{proof}
 The symmetry and non-negativity of \( d \) is immediate. Furthermore, \( d(x,x) = 0 \) by definition, and if \( d(x,y) = 0  \) then we must have \( x = y \) since \( m(x,y) \geq 1 \). To prove the strong triangle inequality for \( d \), fix \( x,y,z \in \mathbb{N} ^{\mathbb{N} }  \). We assume \( x,y,z \) are all distinct sequences as the result is immediate otherwise. Observe that
 \begin{align*}
@@ -19,19 +19,18 @@ The symmetry and non-negativity of \( d \) is immediate. Furthermore, \( d(x,x) 
 Clearly \( m(x,y) \geq \min \{ m(x,z), m(z,y) \}  \): if \( \ell = m(x,y) \) then for each \( k \in \{ 1, 2, \hdots , \ell - 1 \} \) the terms \( x_{k} = y_{k}  \), so if \( m(x,z) \geq \ell + 1 \) and \( m(z,y) \geq \ell + 1 \) then \( x_{\ell} = z_{\ell} = y_{\ell}   \) so that \( m(x,y) \geq \ell + 1 \) is a contradiction. Therefore, \( d \) is an ultrametric.
 \end{proof}
 
+We can also define ultrametrics on arbitrary uniformly disconnected spaces.
 Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon  \)-chain} between the pair \( x,y \in X \) is a finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y  \) such that \[\max_{1 \leq i \leq n}  d(x_{i-1} , x_{i}) \leq \varepsilon. \] In this case, we say that \( x, y \) are \( \varepsilon  \)-connected. Observe that if \( x, y \) are \( \varepsilon  \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon  \); and if \( x, y \) can not be \( \varepsilon  \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon  \).
 
 
 The space \( X \) is called \emph{uniformly disconnected} if there is an \( \varepsilon > 0 \) such that no two points in \( X \) can be \( \varepsilon  \)-connected.
-\begin{example}
 Let \( (X,d) \) be a uniformly disconnected metric space. For \( x,y \in X \), let \( c(x,y) \) be the infimum over all \( \varepsilon > 0 \) such that \( x \) and \( y \) are \( \varepsilon  \)-connected. Then \( c \) is an ultrametric on \( X \).
-\end{example}
 \begin{proof}
 Clearly \( c \) is symmetric and non-negative. If \( x = y \) then clearly \( x,y \) are \( \varepsilon  \)-connected for every \( \varepsilon > 0 \) so that \( c(x,y) = 0 \). On the other hand, if \( c(x,y) = 0  \) then \( x = y \), otherwise for each \( \varepsilon > 0 \) the points \( x,y \) are \( \varepsilon  \)-connected, so \( X \) is not uniformly disconnected, a contradiction.
 
 The last thing to prove is the strong triangle inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate. By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \( \gamma_1 \leq c(x,z) + \varepsilon  \) and \( \gamma_2 \leq c(z,y) + \varepsilon  \) such that \( x,z \) are \( \gamma_1 \)-connected and \( z,y \) are \( \gamma_2 \)-connected. Set \( \gamma = \max \{ \gamma_1, \gamma_2 \}\) and note that by combining the \( x,z \) and \( z,y \) chains it follows that \( x,y \) are \( \gamma \)-connected. Thus \[ c(x,y) \leq \gamma \leq \max \{ c(x,z), c(z,y) \} + \varepsilon . \] Since \( \varepsilon  \) was arbitrary, it follows that \( c(x,y) \leq \max \{ c(x,z), c(z,y) \} \).
 \end{proof}
-\subsection{Properties of ultrametric spaces} The strong triangle inequality is extremely powerful.
+\subsection{Properties of ultrametric spaces} The strong triangle inequality is much stronger than the usual triangle inequality. Because of this, ultrametric spaces have some elegant properties which we explore now.
 \begin{lemma}
 If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(y,z) = d(x,z) \). (That is, every triangle in an ultrametric space is isosceles.)
 \end{lemma}
