@@ -1,5 +1,10 @@
 %! TeX root: ../main.tex
 \section{Filters}
+In this short section, we introduce a sequence of lemmas building up to (lemma), which is fundamental to the proof of the main result. Recall from the introduction that a \emph{filter} \( \mathcal{F}  \) on \( X \) is a family of subsets of \( X \) with \( \emptyset \notin \mathcal{F}  \), \( X \in \mathcal{F}  \), and which is closed under the superset inclusion and finite intersections.
+
+A filter \( \mathcal{F}  \) is an \emph{ultrafilter} if it is not properly contained in another filter, and we call \( \mathcal{F}  \) \emph{free} if \( \medcap \mathcal{F} = \emptyset  \). We say that \( \mathcal{F}  \) has the \emph{finite intersection property} (FIP) if the intersection of any finite number of sets in \( \mathcal{F}  \) is non-empty. 
+
+The first lemma is the following.
 \begin{lemma}
  If \( \mathcal{K}  \) is a family of subsets satisfying the FIP, then there is a filter \(  \mathcal{F}  \) containing each element of \( \mathcal{K}  \).
 \end{lemma}
@@ -20,6 +25,7 @@ A family \( \mathcal{F}  \) is an ultrafilter if and only if \( \mathcal{F}  \) 
 \begin{proof}
 	Let \( \mathcal{F}  \) be an ultrafilter and suppose for a contradiction that \( A = A_1 \cup A_2 \) is in \( \mathcal{F}\) but \( A_1, A_2 \notin \mathcal{F}  \). Hence (lemma) we have \( A_1^{c} , A_2^{c} \in \mathcal{F}  \) so that \( A^{c} = A_1^{c} \cap A_2^{c} \in \mathcal{F}  \). Consequently, \( \emptyset = A \cap A^{c} \in \mathcal{F}  \) is a contradiction. The case where \( A = A_1 \cup \cdots \cup A_{n}  \) follows via elementary induction. Conversely, assume \( \mathcal{F}  \) has the Ramsey property. If \( \mathcal{F}  \) is not an ultrafilter, then there is a subset \( A \subseteq \mathbb{N}  \) with \( A, A^{c} \notin \mathcal{F}  \). But \( \mathbb{N} \in \mathcal{F}  \) and \( \mathbb{N} = A \cup A^{c}  \), so we must have \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \), a contradiction.
 \end{proof}
+\begin{comment}
 \begin{proposition}
 A family \( \mathcal{F}  \) is an ultrafilter if and only if \( \mathcal{F} ^{\ast}  \) is a filter.
 \end{proposition}
@@ -29,7 +35,6 @@ Let us first assume that \( \mathcal{F}  \) is an ultrafilter, and fix \( A,B \i
 Conversely, we suppose \( \mathcal{F} ^{\ast}  \) is a filter. Suppose towards a contradiction that \( \mathcal{F}  \) is not an ultrafilter. Hence by (lemma) there is a subset \( A \subseteq \mathbb{N}  \) with \( A, A^{c} \notin \mathcal{F}  \). So no set in \( \mathcal{F}  \) is contained in \( A \) and likewise for \( A^{c}  \). That is, for every set \( B \in \mathcal{F}  \), we have \( A \cap B \neq \emptyset  \) and \( A^{c} \cap B \neq \emptyset  \). By definition, then, \( A, A^{c} \in \mathcal{F}^{\ast}   \). But \( \mathcal{F} ^{\ast}  \) is a filter, so \( \emptyset = A \cap A^{c} \in \mathcal{F} ^{\ast}  \) is a contradiction, and the proof is complete.
 \end{proof}
 
-\begin{comment}
 A \emph{dynamical system} is a pair \( (X,f) \), where \( X \) is a compact Hausdorff space and \( f : X \to X \) is a continuous function. When \( X \) is metrizable, we call the dynamical system \( (X,f) \) a \emph{metric system}. In what follows, we use \( X \) to denote a fixed metric system with metric \( d \).
 
 Fix \( \varepsilon > 0 \) and let \( \xi = \{ x_{n}  \}_{n=1} ^{\infty}   \) be a sequence in \( X \). We say that a point \( x \in X \) \emph{\( \varepsilon  \)-shadows} \( \xi \) on a subset \( A \subseteq \mathbb{N}  \) if the orbit of \( x \) well-approximates \( \xi \) on \( A \); that is,  \[A \subseteq \{ n \in \mathbb{N} : d(f^{n} (x), x_{n} ) < \varepsilon  \} . \]
