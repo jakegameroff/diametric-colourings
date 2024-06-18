@@ -1,11 +1,11 @@
 %! TeX root: ../main.tex
 \section{Ultrametric Analysis}
 In this short section, we provide some interesting examples of ultrametric spaces and survey some of their fundamental properties.
-\subsection{Examples: The space \( \mathbb{N} ^{\mathbb{N} } \) and \( \varepsilon  \)-chains} The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise. This metric was first constructed by (guy) in (year) to (task) [3]. 
+\subsection{Examples: The space \( \mathbb{N} ^{\mathbb{N} } \), graphs, and \( \varepsilon  \)-chains} The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. Another simple example is $(\mathbb{N}, d)$, where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise. This metric was first constructed by (guy) in (year) to (task) [3]. 
 
-However, there are much more interesting constructions. In this regard, we will construct ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} }$ and general uniformly disconnected metric spaces.
+However, there are much more interesting constructions. In this regard, we will construct ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} }$, connected graphs, and general uniformly disconnected metric spaces.
 
-We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \), which is the space of all sequences of natural numbers.
+\subsubsection{The Baire space} We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \), which is the space of all sequences of natural numbers.
 
 For two distinct sequences \( x =  (x_{n}) \), \( y = (y_{n} ) \) in \( \mathbb{N}  \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. For distinct sequences \( x,y \in \mathbb{N} ^{\mathbb{N} }  \), set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,y) = 0 \) if \( x=y \). Then \( d \) is an ultrametric on \( \mathbb{N} ^{\mathbb{N} }  \).
 \begin{proof}
@@ -18,8 +18,10 @@ The symmetry and non-negativity of \( d \) is immediate. Furthermore, \( d(x,x) 
 \end{align*}
 Clearly \( m(x,y) \geq \min \{ m(x,z), m(z,y) \}  \): if \( \ell = m(x,y) \) then for each \( k \in \{ 1, 2, \hdots , \ell - 1 \} \) the terms \( x_{k} = y_{k}  \), so if \( m(x,z) \geq \ell + 1 \) and \( m(z,y) \geq \ell + 1 \) then \( x_{\ell} = z_{\ell} = y_{\ell}   \) so that \( m(x,y) \geq \ell + 1 \) is a contradiction. Therefore, \( d \) is an ultrametric.
 \end{proof}
+\subsubsection{Graphs}
 
-We can also define ultrametrics on arbitrary uniformly disconnected spaces.
+
+\subsubsection{Uniformly disconnected spaces} We can also define ultrametrics on arbitrary uniformly disconnected spaces.
 Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon  \)-chain} between the pair \( x,y \in X \) is a finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y  \) such that \[\max_{1 \leq i \leq n}  d(x_{i-1} , x_{i}) \leq \varepsilon. \] In this case, we say that \( x, y \) are \( \varepsilon  \)-connected. Observe that if \( x, y \) are \( \varepsilon  \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon  \); and if \( x, y \) can not be \( \varepsilon  \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon  \).
 
 
@@ -31,8 +33,10 @@ Clearly \( c \) is symmetric and non-negative. If \( x = y \) then clearly \( x,
 The last thing to prove is the strong triangle inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate. By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \( \gamma_1 \leq c(x,z) + \varepsilon  \) and \( \gamma_2 \leq c(z,y) + \varepsilon  \) such that \( x,z \) are \( \gamma_1 \)-connected and \( z,y \) are \( \gamma_2 \)-connected. Set \( \gamma = \max \{ \gamma_1, \gamma_2 \}\) and note that by combining the \( x,z \) and \( z,y \) chains it follows that \( x,y \) are \( \gamma \)-connected. Thus \[ c(x,y) \leq \gamma \leq \max \{ c(x,z), c(z,y) \} + \varepsilon . \] Since \( \varepsilon  \) was arbitrary, it follows that \( c(x,y) \leq \max \{ c(x,z), c(z,y) \} \).
 \end{proof}
 \subsection{Properties of ultrametric spaces} The strong triangle inequality is much stronger than the usual triangle inequality. Because of this, ultrametric spaces have some elegant properties which we explore now.
+
+First, it turns out that every triangle is isosceles.
 \begin{lemma}
-If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(y,z) = d(x,z) \). (That is, every triangle in an ultrametric space is isosceles.)
+If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(y,z) = d(x,z) \).
 \end{lemma}
 \begin{proof}
 Note that \( d \) is an ultrametric and \( d(x,y) < d(y,z) \) so that
@@ -46,18 +50,24 @@ and since \( d(y,z) > d(x,y) \), we have \( d(x,y) < d(x,z) \) as otherwise
 is a contradiction. Thus \( d(y,z) \leq \max \{ d(x,y), d(x,z) \} = d(x,z) \). Combining everything together, we obtain \( d(y,z) = d(x,z) \).
 \end{proof}
 
+We now examine open balls in ultrametric spaces. An \emph{open ball} (or simply a ball) of radius \( \varepsilon > 0 \) centered about a point \( x \in  X \) is the set \[ B_{\varepsilon }(x) \coloneqq \{ y \in X : d(x,y) < \varepsilon  \}.  \] A subset \( \mathcal{O}  \) of \( X \) is called \emph{open} if it can be written as a union of open balls. A set is \emph{closed} if its complement is open.
 
+Open balls in ultrametric spaces have vastly unintuitive properties. For example, every point in a ball is its center.
 
-An \emph{open ball} (or simply a \emph{ball}) of radius \( \varepsilon > 0 \) centered about a point \( x \in  X \) is defined as the set \( B_{\varepsilon }(x) \coloneqq \{ y \in X : d(x,y) < \varepsilon  \}  \). If left unspecified, note that \( x \) denotes a point in \( X \) and \( \varepsilon  \) a positive real number. 
-
-A subset \( \mathcal{O}  \) of \( X \) is called \emph{open} if it can be written as a union of open balls. A set is \emph{closed} if its complement is open. Open balls and general sets in ultrametric spaces exhibit properties that are quite counterintuitive, as delineated by the following simple lemmas.
 \begin{lemma}
-Let \( B_{\varepsilon } (x) \) be an open ball in \( X \). Then \( B_{\varepsilon } (x) = B_{\varepsilon } (y) \) for every point \( y \in B_{\varepsilon } (x) \). (That is, every point in a ball is its center.)
+Let \( B_{\varepsilon } (x) \) be an open ball in \( X \). Then \( B_{\varepsilon } (x) = B_{\varepsilon } (y) \) for every point \( y \in B_{\varepsilon } (x) \).
 \end{lemma}
 \begin{proof}
 Fix \( y \in B_{\varepsilon } (x) \) so that \( d(x,y) < \varepsilon  \). If \( t \in B_{\varepsilon } (y) \) then \( d(y,t) < \varepsilon  \). Then \( t \in B_{\varepsilon } (x) \) since \[ d(x, t) \leq \max \{ d(x,y), d(y,t) \} < \varepsilon . \] The reverse inclusion follows symmetrically as \( x \in B_{\varepsilon } (y) \).
 \end{proof}
-
+Another important result is that if two balls intersect then one of them contains the other. More generally, we have the following lemma.
+\begin{lemma}
+Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
+\end{lemma}
+\begin{proof}
+Assume without loss of generality that \( \varepsilon_1 \leq \varepsilon_2 \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2} (y) \neq \emptyset \), there is a point \( t \in X \) with \( t \in B_{\varepsilon_1}(x) \) and \( t \in  B_{\varepsilon_2} (y)  \). By (lemma) and since \( \varepsilon_1 \leq \varepsilon_2 \), we obtain \( B_{\varepsilon_1} (x) = B_{\varepsilon_1} (t) \subseteq B_{\varepsilon_2} (t) = B_{\varepsilon_2} (y) \) as required.
+\end{proof}
+A generalization of (lemma) is as follows.
 \begin{lemma}
 Let \( A \subseteq X \) and consider any ball \(B_{\varepsilon } (x) \) in \( X \). If \( B_{\varepsilon } (x) \) meets \( A \) then \( A \cap B_{\varepsilon } (x) \) is a ball in the space \( (A, d) \).
 \end{lemma}
@@ -69,18 +79,15 @@ Note from (lemma) that \( a \) is the center of \( B_{\varepsilon } (x) \) so th
 \begin{comment}
 Since \( A \cap B \neq \emptyset \) there is a point \( a \in A \cap B \). Write \( B = B_{\varepsilon } (x) \) for some \( x \in X \) and \( \varepsilon > 0 \). To show that \( A \cap B \) is a ball in \( A \), we must find a radius \( r > 0 \) such that for every \( t \in A \cap B\), \( d(a,t) < r \). Set \( r = \varepsilon  \) and fix \( t \in A \cap B \). Then \( a, t \in B \) so that \( d(a,x) < \varepsilon  \) and \( d(t,x) < \varepsilon  \). Using the strong triangle inequality, \[ d(a,t) \leq \max \{ d(a,x) , d(t,x) \} < \varepsilon = r. \] Therefore, \( A \cap B \) is a ball in \( A \).
 \end{comment}
+
+Furthermore, it turns out that all open balls are also closed in \( X \).
 \begin{lemma}
-Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
-\end{lemma}
-\begin{proof}
-This is a weaker version of (obs), but we give the statement its own proof for clarity. Assume without loss of generality that \( \varepsilon_1 \leq \varepsilon_2 \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2} (y) \neq \emptyset \), there is a point \( t \in X \) with \( t \in B_{\varepsilon_1}(x) \) and \( t \in  B_{\varepsilon_2} (y)  \). By (lemma) and since \( \varepsilon_1 \leq \varepsilon_2 \), we obtain \( B_{\varepsilon_1} (x) = B_{\varepsilon_1} (t) \subseteq B_{\varepsilon_2} (t) = B_{\varepsilon_2} (y) \) as required.
-\end{proof}
-\begin{lemma}
-If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B_{\varepsilon } (x) \) is a union of open balls. (That is, open balls are closed in \( X \).)
+If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B_{\varepsilon } (x) \) is closed.
 \end{lemma}
 \begin{proof}
 Suppose for a contradiction that there is a point \( t \in X \setminus B_{\varepsilon} (x) \) such that for every \( r > 0 \) the ball \( B_{r}(t) \) is not contained in \( X \setminus B_{\varepsilon } (x) \), so \( B_{r} (t) \cap B_{\varepsilon} (x) \neq \emptyset \). Setting \( r = \varepsilon  \) and using (lemma), we have \( B_{\varepsilon} (t) \subseteq B_{\varepsilon } (x) \) or \( B_{\varepsilon} (t) \subseteq B_{\varepsilon} (x) \). In either case, (lemma) implies equality. But then \( t \in X \setminus B_{\varepsilon } (x) = X \setminus B_{\varepsilon } (t) \) is a contradiction. Hence \( X \setminus B_{\varepsilon } (x) \) is a union of open balls so that \( B_{\varepsilon } (x) \) is closed in \( X \).
 \end{proof}
+Our final application of the ultrametric inequality is to the diameter of subsets of the space.
 \begin{lemma}
 Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{diam} A = \sup \{ d(a, x) : x \in A \}   \).
 \end{lemma}
