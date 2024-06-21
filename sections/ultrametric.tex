@@ -18,8 +18,17 @@ The symmetry and non-negativity of \( d \) is immediate. Furthermore, \( d(x,x) 
 \end{align*}
 Clearly \( m(x,y) \geq \min \{ m(x,z), m(z,y) \}  \): if \( \ell = m(x,y) \) then for each \( k \in \{ 1, 2, \hdots , \ell - 1 \} \) the terms \( x_{k} = y_{k}  \), so if \( m(x,z) \geq \ell + 1 \) and \( m(z,y) \geq \ell + 1 \) then \( x_{\ell} = z_{\ell} = y_{\ell}   \) so that \( m(x,y) \geq \ell + 1 \) is a contradiction. Therefore, \( d \) is an ultrametric.
 \end{proof}
-\subsubsection{Graphs}
+\subsubsection{Graphs} Let \( G = (V,E) \) be a connected graph with positive edge-weights. For a path \( P \) in \( G \), let \( e_{P} \) denote an edge in \( P \) with minimum weight. If \( u , v  \) are two vertices in \( G \), we define the \emph{maximin path} between them to be a path \( P \) between \( u, v \) such that \( e_{P}  \) maximal. That is, out of all paths between \( u \) and \( v \), a maximin path maximizes the weight of the minimum-weight edge in the path.
 
+Intuitively, if we think of an edge's weight as a capacity, taking the maximin path from \( u \) to \( v \) allows us to carry the heaviest load without exceeding any edge's capacity [9].
+
+For a pair of distinct vertices \( u, v \in V \) with maximin path \( P \), let \( \ell(u, v) = e_{P} \) be the weight of the minimum-weight edge in \( P \); and set \( \ell(u, u) = 0 \). We prove that \( \ell \) is an ultrametric now. We claim that \( \ell \) is an ultrametric on the vertex set \( V \).
+
+\begin{proof}
+That \( \ell \) is symmetric and non-negative is immediate. By definition, \( d(u, u) = 0 \) and if \( d(u, v) = 0 \) then \( u = v \), as otherwise there is an edge in \( G \) with weight 0 even though its edges have only positive weights.
+
+To prove the ultrametric inequality, fix three vertices \( u, v , w \in V \). The inequality is clear if \( u,v,w \) are not distinct. Let \( P_{uv}, \ P_{uw} , \ P_{wv}   \) be maximin paths between their respective vertices. 
+\end{proof}
 
 \subsubsection{Uniformly disconnected spaces} We can also define ultrametrics on arbitrary uniformly disconnected spaces.
 Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon  \)-chain} between the pair \( x,y \in X \) is a finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y  \) such that \[\max_{1 \leq i \leq n}  d(x_{i-1} , x_{i}) \leq \varepsilon. \] In this case, we say that \( x, y \) are \( \varepsilon  \)-connected. Observe that if \( x, y \) are \( \varepsilon  \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon  \); and if \( x, y \) can not be \( \varepsilon  \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon  \).
