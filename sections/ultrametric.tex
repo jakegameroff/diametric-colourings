@@ -18,28 +18,43 @@ The symmetry and non-negativity of \( d \) is immediate. Furthermore, \( d(x,x) 
 \end{align*}
 Clearly \( m(x,y) \geq \min \{ m(x,z), m(z,y) \}  \): if \( \ell = m(x,y) \) then for each \( k \in \{ 1, 2, \hdots , \ell - 1 \} \) the terms \( x_{k} = y_{k}  \), so if \( m(x,z) \geq \ell + 1 \) and \( m(z,y) \geq \ell + 1 \) then \( x_{\ell} = z_{\ell} = y_{\ell}   \) so that \( m(x,y) \geq \ell + 1 \) is a contradiction. Therefore, \( d \) is an ultrametric.
 \end{proof}
-\subsubsection{Graphs} Let \( G = (V,E) \) be a connected graph with positive edge-weights. For a path \( P \) in \( G \), let \( e_{P} \) denote an edge in \( P \) with minimum weight. If \( u , v  \) are two vertices in \( G \), we define the \emph{maximin path} between them to be a path \( P \) between \( u, v \) such that \( e_{P}  \) maximal. That is, out of all paths between \( u \) and \( v \), a maximin path maximizes the weight of the minimum-weight edge in the path.
+\subsubsection{Graphs} (the following is due to (author), with intuition, ...) Let \( G \) be a connected graph with positive edge-weights. For an edge \( e \) in \( G \), let \( w(e) \) denote its weight. Given a walk \( x = (v_1, v_2, \hdots , v_{n}) \) in \( G \), we will denote by \( e_{x} \) an edge in the walk with maximum weight.
 
-Intuitively, if we think of an edge's weight as a capacity, taking the maximin path from \( u \) to \( v \) allows us to carry the heaviest load without exceeding any edge's capacity [9].
+We say that a walk \( x \) between two vertices \( u , v \) is a \emph{minimax walk} if there is no other walk \( x' \) between \( u,v \) whose max-weight edge is lighter than \( e_{x}  \). Equivalently, \( w(e_{x}) \leq w(e_{x'}) \) for every walk \( x' \) between \( u,v \).
 
-For a pair of distinct vertices \( u, v \in V \) with maximin path \( P \), let \( \ell(u, v) = e_{P} \) be the weight of the minimum-weight edge in \( P \); and set \( \ell(u, u) = 0 \). We prove that \( \ell \) is an ultrametric now. We claim that \( \ell \) is an ultrametric on the vertex set \( V \).
+We can use this notion to define an ultrametric on \( V(G) \). Specifically, given two distinct vertices \( u,v \in V(G) \) with minimax walk \( x \), we set \( \ell(u, v) = w(e_{x}) \), with \( \ell(u,u) = 0 \). The proof that \( \ell \) is an ultrametric is as follows.
 
 \begin{proof}
-That \( \ell \) is symmetric and non-negative is immediate. By definition, \( d(u, u) = 0 \) and if \( d(u, v) = 0 \) then \( u = v \), as otherwise there is an edge in \( G \) with weight 0 even though its edges have only positive weights.
+That \( \ell \) is symmetric and non-negative is immediate. By definition, \( \ell(u, u) = 0 \) and if \( \ell(u, v) = 0 \) then \( u = v \), as otherwise there is an edge in \( G \) with weight 0 even though its edges have only positive weights.
 
-To prove the ultrametric inequality, fix three vertices \( u, v , w \in V \). The inequality is clear if \( u,v,w \) are not distinct. Let \( P_{uv}, \ P_{uw} , \ P_{wv}   \) be maximin paths between their respective vertices. 
+To prove the ultrametric inequality, fix \( u, v, w \in V(G) \). We may assume that \( u,v,w \) are distinct as otherwise the claim is immediate. Let \( x_{u,w} = (v_1, v_2, \hdots , v_{m}) \) and \( x_{w,v} = (v_{m}, v_{m+1} , \hdots , v_{n}) \) denote minimax walks between \( u,w \) and \( w,v \) respectively, and let \( x = (v_1, v_2, \hdots , v_{n}) \) be their union. Then the max-weight edge in \( x \) has weight \( \max \{ \ell (u, w), \ell (w,v) \}  \). Since \( x \) is a walk between \( u,v \), we have \( \ell (u, v) \leq \max \{ \ell (u,w), \ell (w,v) \}  \), completing the proof.
 \end{proof}
 
-\subsubsection{Uniformly disconnected spaces} We can also define ultrametrics on arbitrary uniformly disconnected spaces.
-Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon  \)-chain} between the pair \( x,y \in X \) is a finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y  \) such that \[\max_{1 \leq i \leq n}  d(x_{i-1} , x_{i}) \leq \varepsilon. \] In this case, we say that \( x, y \) are \( \varepsilon  \)-connected. Observe that if \( x, y \) are \( \varepsilon  \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon  \); and if \( x, y \) can not be \( \varepsilon  \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon  \).
+\subsubsection{Uniformly disconnected spaces} (cite def) Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon  \)-chain} between the pair \( x,y \) of distinct points in \( X \) is a finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y  \) such that \[\max_{1 \leq i \leq n}  d(x_{i-1} , x_{i})  \leq \varepsilon \cdot d(x,y). \] In this case, we say that \( x, y \) are \( \varepsilon  \)-connected. Observe that if \( x, y \) are \( \varepsilon  \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon  \); and if \( x, y \) can not be \( \varepsilon  \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon  \).
 
 
-The space \( X \) is called \emph{uniformly disconnected} if there is an \( \varepsilon > 0 \) such that no two points in \( X \) can be \( \varepsilon  \)-connected.
-Let \( (X,d) \) be a uniformly disconnected metric space. For \( x,y \in X \), let \( c(x,y) \) be the infimum over all \( \varepsilon > 0 \) such that \( x \) and \( y \) are \( \varepsilon  \)-connected. Then \( c \) is an ultrametric on \( X \).
+The space \( X \) is called \emph{uniformly disconnected} if there is an \( \varepsilon > 0 \) such that no two points in \( X \) can be \( \varepsilon  \)-connected. It is not hard to prove that uniform disconnectivity is stronger than total disconnectivity. To give some intuition, we note that the Cantor set \( \mathcal{C}  \) is uniformly disconnected and the set \( \{ 1/n : n \in \mathbb{N}  \}  \) is not [tb].
+
+
+Let \( (X,d) \) be a uniformly disconnected metric space. For \( x,y \in X \), let \( c(x,y) \) be the infimum over all \( \varepsilon > 0 \) such that \( x \) and \( y \) are \( d(x,y)^{-1} \cdot \varepsilon  \)-connected. Then \( c \) is an ultrametric on \( X \).
 \begin{proof}
 Clearly \( c \) is symmetric and non-negative. If \( x = y \) then clearly \( x,y \) are \( \varepsilon  \)-connected for every \( \varepsilon > 0 \) so that \( c(x,y) = 0 \). On the other hand, if \( c(x,y) = 0  \) then \( x = y \), otherwise for each \( \varepsilon > 0 \) the points \( x,y \) are \( \varepsilon  \)-connected, so \( X \) is not uniformly disconnected, a contradiction.
 
-The last thing to prove is the strong triangle inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate. By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \( \gamma_1 \leq c(x,z) + \varepsilon  \) and \( \gamma_2 \leq c(z,y) + \varepsilon  \) such that \( x,z \) are \( \gamma_1 \)-connected and \( z,y \) are \( \gamma_2 \)-connected. Set \( \gamma = \max \{ \gamma_1, \gamma_2 \}\) and note that by combining the \( x,z \) and \( z,y \) chains it follows that \( x,y \) are \( \gamma \)-connected. Thus \[ c(x,y) \leq \gamma \leq \max \{ c(x,z), c(z,y) \} + \varepsilon . \] Since \( \varepsilon  \) was arbitrary, it follows that \( c(x,y) \leq \max \{ c(x,z), c(z,y) \} \).
+The last thing to prove is the strong triangle inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate.
+
+By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \( \gamma_1 \leq c(x,z) + \varepsilon  \) and \( \gamma_2 \leq c(z,y) + \varepsilon  \) such that \( x,z \) are \( d(x,z)^{-1} \cdot \gamma_1 \)-connected and \( z,y \) are \(d(z,y)^{-1} \cdot \gamma_2 \)-connected. Hence we obtain sequences
+\begin{itemize}[leftmargin=1.2cm]
+	\item \( x = x_0, x_1, \hdots x_{m} = z  \) with \( \max_{1 \leq i \leq m} d(x_{i-1} , x_{i}) \leq \gamma_1 \); and
+	\item \( z = x_{m} , x_{m+1} , \hdots , x_{n} = y \) with \( \max_{m+1 \leq i \leq n} d(x_{i-1} , x_{i}) \leq \gamma_2 \). 
+\end{itemize}
+Now set \( \gamma = \max \{ \gamma_1, \gamma_2 \}  \) and observe that \( x,y \) are \( \gamma \)-connected since \[ \max _{1 \leq i \leq n} d(x_{i-1} , x_{i} ) \leq \gamma = \frac{\gamma}{d(x,y)} \cdot d(x,y). \] 
+Then we obtain
+\begin{align*}
+	c(x,y) \leq \gamma &= \max \{ \gamma_1, \gamma_2 \} \\
+	       &\leq \max \{ c(x,z) + \varepsilon , c(z,y) + \varepsilon  \} \\
+	       &= \max \{ c(x,z), c(z,y) \} + \varepsilon,
+\end{align*}
+so sending \( \varepsilon \to 0 \) yields \( c(x,y) \leq \max \{ c(x,z), c(z,y) \} \).
 \end{proof}
 \subsection{Properties of ultrametric spaces} The strong triangle inequality is much stronger than the usual triangle inequality. Because of this, ultrametric spaces have some elegant properties which we explore now.
 
