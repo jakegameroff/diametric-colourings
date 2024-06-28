@@ -60,6 +60,7 @@ so sending \( \varepsilon \to 0 \) yields \( c(x,y) \leq \max \{ c(x,z), c(z,y) 
 
 First, it turns out that every triangle is isosceles.
 \begin{lemma}
+\label{lem:1}
 If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,y) < d(y,z) \) then \( d(y,z) = d(x,z) \).
 \end{lemma}
 \begin{proof}
@@ -79,6 +80,7 @@ We now examine open balls in ultrametric spaces. An \emph{open ball} (or simply 
 Open balls in ultrametric spaces have vastly unintuitive properties. For example, every point in a ball is its center.
 
 \begin{lemma}
+\label{lem:2}
 Let \( B_{\varepsilon } (x) \) be an open ball in \( X \). Then \( B_{\varepsilon } (x) = B_{\varepsilon } (y) \) for every point \( y \in B_{\varepsilon } (x) \).
 \end{lemma}
 \begin{proof}
@@ -86,19 +88,21 @@ Fix \( y \in B_{\varepsilon } (x) \) so that \( d(x,y) < \varepsilon  \). If \( 
 \end{proof}
 Another important result is that if two balls intersect then one of them contains the other. More generally, we have the following lemma.
 \begin{lemma}
+\label{lem:3}
 Fix \( \varepsilon_1, \varepsilon_2 > 0 \) and \( x, y \in X \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2}(y) \neq \emptyset  \) then \( B_{\varepsilon_1} (x) \subseteq B_{\varepsilon_2} (y) \) or \( B_{\varepsilon_{2} }(y) \subseteq B_{\varepsilon_1} (x)  \). (That is, two balls are either disjoint or one of them contains the other.)
 \end{lemma}
 \begin{proof}
-Assume without loss of generality that \( \varepsilon_1 \leq \varepsilon_2 \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2} (y) \neq \emptyset \), there is a point \( t \in X \) with \( t \in B_{\varepsilon_1}(x) \) and \( t \in  B_{\varepsilon_2} (y)  \). By (lemma) and since \( \varepsilon_1 \leq \varepsilon_2 \), we obtain \( B_{\varepsilon_1} (x) = B_{\varepsilon_1} (t) \subseteq B_{\varepsilon_2} (t) = B_{\varepsilon_2} (y) \) as required.
+	Assume without loss of generality that \( \varepsilon_1 \leq \varepsilon_2 \). If \( B_{\varepsilon_1} (x) \cap B_{\varepsilon_2} (y) \neq \emptyset \), there is a point \( t \in X \) with \( t \in B_{\varepsilon_1}(x) \) and \( t \in  B_{\varepsilon_2} (y)  \). By Lemma \ref{lem:2} and since \( \varepsilon_1 \leq \varepsilon_2 \), we obtain \( B_{\varepsilon_1} (x) = B_{\varepsilon_1} (t) \subseteq B_{\varepsilon_2} (t) = B_{\varepsilon_2} (y) \) as required.
 \end{proof}
-A generalization of (lemma) is as follows.
+A generalization of Lemma \ref{lem:3} is as follows.
 \begin{lemma}
+\label{lem:4}
 Let \( A \subseteq X \) and consider any ball \(B_{\varepsilon } (x) \) in \( X \). If \( B_{\varepsilon } (x) \) meets \( A \) then \( A \cap B_{\varepsilon } (x) \) is a ball in the space \( (A, d) \).
 \end{lemma}
 \begin{proof}
 Since \( A \cap B_{\varepsilon } (x) \neq \emptyset  \), there is a point \( a \in A \cap B_{\varepsilon } (x) \). Let \( B_{A} = \{ t \in A : d(t,a) < \varepsilon  \}  \) be a ball in \( A \). We show that \( A \cap B_{\varepsilon } (x) = B_{A}  \).
 
-Note from (lemma) that \( a \) is the center of \( B_{\varepsilon } (x) \) so that \( A \cap B_{\varepsilon } (x) = A \cap B_{\varepsilon } (a) \). Then if \( t \in A \cap B_{\varepsilon } (x) \) we have \( t \in A \cap B_{\varepsilon } (a) \) so that \( d(t, a) < \varepsilon  \) and hence \( t \in B_{A} \). On the other hand, if \( t \in B_{A}  \) then from the strong triangle inequality we obtain \[ d(x, t) \leq \max \{ d(x,a), d(a,t) \} < \varepsilon , \] since \( a \in B_{\varepsilon } (x) \). Hence, \( t \in A \cap B_{\varepsilon } (x) \) completes the proof.
+Note from Lemma \ref{lem:2} that \( a \) is the center of \( B_{\varepsilon } (x) \) so that \( A \cap B_{\varepsilon } (x) = A \cap B_{\varepsilon } (a) \). Then if \( t \in A \cap B_{\varepsilon } (x) \) we have \( t \in A \cap B_{\varepsilon } (a) \) so that \( d(t, a) < \varepsilon  \) and hence \( t \in B_{A} \). On the other hand, if \( t \in B_{A}  \) then from the strong triangle inequality we obtain \[ d(x, t) \leq \max \{ d(x,a), d(a,t) \} < \varepsilon , \] since \( a \in B_{\varepsilon } (x) \). Hence, \( t \in A \cap B_{\varepsilon } (x) \) completes the proof.
 \end{proof}
 \begin{comment}
 Since \( A \cap B \neq \emptyset \) there is a point \( a \in A \cap B \). Write \( B = B_{\varepsilon } (x) \) for some \( x \in X \) and \( \varepsilon > 0 \). To show that \( A \cap B \) is a ball in \( A \), we must find a radius \( r > 0 \) such that for every \( t \in A \cap B\), \( d(a,t) < r \). Set \( r = \varepsilon  \) and fix \( t \in A \cap B \). Then \( a, t \in B \) so that \( d(a,x) < \varepsilon  \) and \( d(t,x) < \varepsilon  \). Using the strong triangle inequality, \[ d(a,t) \leq \max \{ d(a,x) , d(t,x) \} < \varepsilon = r. \] Therefore, \( A \cap B \) is a ball in \( A \).
@@ -106,13 +110,15 @@ Since \( A \cap B \neq \emptyset \) there is a point \( a \in A \cap B \). Write
 
 Furthermore, it turns out that all open balls are also closed in \( X \).
 \begin{lemma}
+\label{lem:5}
 If \( B_{\varepsilon } (x) \) is an open ball in \( X \), then \( X \setminus  B_{\varepsilon } (x) \) is closed.
 \end{lemma}
 \begin{proof}
-Suppose for a contradiction that there is a point \( t \in X \setminus B_{\varepsilon} (x) \) such that for every \( r > 0 \) the ball \( B_{r}(t) \) is not contained in \( X \setminus B_{\varepsilon } (x) \), so \( B_{r} (t) \cap B_{\varepsilon} (x) \neq \emptyset \). Setting \( r = \varepsilon  \) and using (lemma), we have \( B_{\varepsilon} (t) \subseteq B_{\varepsilon } (x) \) or \( B_{\varepsilon} (t) \subseteq B_{\varepsilon} (x) \). In either case, (lemma) implies equality. But then \( t \in X \setminus B_{\varepsilon } (x) = X \setminus B_{\varepsilon } (t) \) is a contradiction. Hence \( X \setminus B_{\varepsilon } (x) \) is a union of open balls so that \( B_{\varepsilon } (x) \) is closed in \( X \).
+	Suppose for a contradiction that there is a point \( t \in X \setminus B_{\varepsilon} (x) \) such that for every \( r > 0 \) the ball \( B_{r}(t) \) is not contained in \( X \setminus B_{\varepsilon } (x) \), so \( B_{r} (t) \cap B_{\varepsilon} (x) \neq \emptyset \). Setting \( r = \varepsilon  \) and using Lemma \ref{lem:3}, we have \( B_{\varepsilon} (t) \subseteq B_{\varepsilon } (x) \) or \( B_{\varepsilon} (x) \subseteq B_{\varepsilon} (t) \). In either case, Lemma \ref{lem:2} implies equality. But then \( t \in X \setminus B_{\varepsilon } (x) = X \setminus B_{\varepsilon } (t) \) is a contradiction. Hence \( X \setminus B_{\varepsilon } (x) \) is a union of open balls so that \( B_{\varepsilon } (x) \) is closed in \( X \).
 \end{proof}
 Our final application of the ultrametric inequality is to the diameter of subsets of the space.
 \begin{lemma}
+\label{lem:6}
 Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{diam} A = \sup \{ d(a, x) : x \in A \}   \).
 \end{lemma}
 \begin{proof}

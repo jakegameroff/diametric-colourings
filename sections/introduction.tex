@@ -1,14 +1,14 @@
 %! TeX root: ../main.tex
 \section{Introduction}
-Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey [1] proved that for each \( k \in \mathbb{N}  \) there is a sufficiently large \( n \in \mathbb{N}  \) such that in any red-blue coloring of the edges of the complete graph \( K_{n} \) there is a set of \( k \) vertices joined by edges of the same color.
+Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey proved in \cite{ramsey:1930} that for each \( k \in \mathbb{N}  \) there is a sufficiently large \( n \in \mathbb{N}  \) such that in any red-blue coloring of the edges of the complete graph \( K_{n} \) there is a set of \( k \) vertices joined by edges of the same color.
 
-Another seminal result is Van der Waerden's theorem, which states that for all positive integers \( r, k \in \mathbb{N}  \), there is a large enough \( n \in \mathbb{N}  \) such that if we color the integers in \( [n] \coloneqq \{ 1,2,\hdots ,n \}  \) using \( k \) colors, one can always find a set of \( r \) monochromatic integers in arithmetic progression [2].
+Another seminal result is Van der Waerden's theorem, which states that for all positive integers \( r, k \in \mathbb{N}  \), there is a large enough \( n \in \mathbb{N}  \) such that if we color the integers in \( [n] \coloneqq \{ 1,2,\hdots ,n \}  \) using \( k \) colors, one can always find a set of \( r \) monochromatic integers in arithmetic progression \cite{waerden:1927}.
 
 Motivated by these kinds of classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will color a class of subsets of the space and search for an infinite set whose subsets in this class receive the same color. We formalize this as follows.
 
 Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. For a family \( \mathcal{A} \) of subsets of \( X \), a \emph{\( k \)-coloring} of \( \mathcal{A}  \) is any mapping \( \chi : \mathcal{A} \to [k] \). We would like to find a set \( M \subseteq X \) and a color \( c \in [k] \) such that \( \chi(N) = c \) for every subset \( N \subseteq M \) with \(N \in \mathcal{A}  \). In this case, we say that \( M \) is \emph{monochrome}.
 
-In this context, the ``large" objects in \( X \) which we will work with are free ultrafilters [4]. A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all subsets \( A, B \subseteq X \):
+In this context, the ``large" objects in \( X \) which we will work with are free ultrafilters. A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all subsets \( A, B \subseteq X \):
 \begin{enumerate}[leftmargin=1.2cm]
 	
 	\item If \( A \in \mathcal{F} \) and \( A \subseteq B \) then \( B \in \mathcal{F}  \);
@@ -17,13 +17,14 @@ In this context, the ``large" objects in \( X \) which we will work with are fre
 \end{enumerate}
 A filter \( \mathcal{F}  \) is called an \emph{ultrafilter} if it is not properly contained in a filter on \( X \). A filter \( \mathcal{F}  \) is called \emph{free} if \( \medcap \mathcal{F} = \emptyset  \). Hence free filters are ``spread out" throughout the space and ultrafilters are maximal filters, so we consider \emph{free ultrafilters} as ``large" objects in \( X \).
 
-Given that these are the large objects in focus, it is natural to ask whether there is a free ultrafilter \( \mathcal{F}  \) such that for every coloring of the \( r \)-element subsets of \( X \) there is a monochrome set \( M \in \mathcal{F}  \). It turns out that this question is undecidable in ZFC even with \( X = \mathbb{N}  \), though the statement is true if we accept continuum hypothesis [5]. Hence we must define more restrictive classes of colorings.
+Given that these are the large objects in focus, it is natural to ask whether there is a free ultrafilter \( \mathcal{F}  \) such that for every coloring of the \( r \)-element subsets of \( X \) there is a monochrome set \( M \in \mathcal{F}  \). It turns out that this question is undecidable in ZFC even with \( X = \mathbb{N}  \), though the statement is true if we accept the continuum hypothesis \cite{protasov:2017}. Hence we must define more restrictive classes of colorings.
 
 To this end, (authors) introduce the following [3]. A coloring \( \chi : [X]^{2} \to \{ 0 , 1 \}  \) of the two-element subsets of \( X \) is called \emph{isometric} if \( \chi (\{ x_1, y_1 \} ) = \chi (\{ x_2, y_2 \} ) \) whenever \( d(x_1, y_1) = d(x_2, y_2) \). A free ultrafilter \( \mathcal{F}  \) is called \emph{metrically Ramsey} if for every isometric coloring of \( [X]^{2}  \) there is a monochrome set \( M \in \mathcal{F}  \).
 
 It turns out that in the particular case of ultrametric spaces, metrically Ramsey free ultrafilters are not too hard to construct. Recall that an \emph{ultrametric} \( d \) on a set \( X \) is a metric satisfying the \emph{strong triangle inequality}: for all \( x,y,z \in X \) \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \}.  \] (Authors) leverage the properties of the ultrametric to prove the following theorem.
 
 \begin{theorem}
+\label{thm:1}
 Fix an infinite ultrametric space \( X \). There is a sequence \( (x_{n}) \) in \( X \) such that every free ultrafilter \( \mathcal{F}  \) containing \( (x_{n}) \) is metrically Ramsey.
 \end{theorem}
 
@@ -35,6 +36,8 @@ Given this, we say that a free ultrafilter \( \mathcal{F}  \) on \( X \) is \emp
 
 In this context, our main result is the following.
 \begin{theorem}
-Fix an infinite ultrametric space \( X \). There is a sequence \( (x_{n}) \) in \( X \) such that every free ultrafilter \( \mathcal{F}  \) containing \( (x_{n}) \) is diametrically Ramsey.
+\label{main:result}
+Every infinite ultrametric space \( X \) contains a sequence \( (x_{n}) \) such that every free ultrafilter containing \( (x_{n}) \) is diametrically Ramsey.
 \end{theorem}
-Building towards (theorem), the following two sections review some elementary properties of ultrametric spaces and filters. We then prove the main result in (section).
+
+Building towards the main result, the following two sections review some elementary properties of ultrametric spaces and filters. We then prove the main result in Section \ref{sec:4}.
