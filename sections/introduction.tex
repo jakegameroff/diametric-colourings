@@ -6,7 +6,7 @@ Another seminal result is Van der Waerden's theorem, which states that for all p
 
 Motivated by these classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will color a class of subsets of the space and search for a set whose subsets in this class are all the same color. We formalize this as follows.
 
-Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. For a family \( \mathcal{A} \) of subsets of \( X \), a \emph{coloring} of \( \mathcal{A}  \) is any mapping \( \chi : \mathcal{A} \to [k] \). We would like to find a set \( M \subseteq X \) and a color \( c \in [k] \) such that \( \chi(N) = c \) for every subset \( N \subseteq M \) with \(N \in \mathcal{A}  \). We then say that \( M \) is \emph{monochrome} with respect to \( \mathcal{A}  \). A natural first choice is \( \mathcal{A} = [X]^{2}  \), the class of two-element subsets of \( X \).
+Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. For a family \( \mathcal{A} \) of subsets of \( X \), a \emph{coloring} of \( \mathcal{A}  \) is any mapping \( \chi : \mathcal{A} \to [k] \). We would like to find a set \( M \subseteq X \) and a color \( \varphi  \in [k] \) such that \( \chi(N) = \varphi  \) for every subset \( N \subseteq M \) with \(N \in \mathcal{A}  \). We then say that \( M \) is \emph{monochrome} with respect to \( \mathcal{A}  \). A natural first choice is \( \mathcal{A} = [X]^{2}  \), the class of two-element subsets of \( X \).
 
 In this context, the ``large" objects in \( X \) which we will work with are free ultrafilters. A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all subsets \( A, B \subseteq X \):
 \begin{enumerate}[leftmargin=1.2cm]
@@ -25,7 +25,7 @@ It turns out that in the particular case of ultrametric spaces, metrically Ramse
 
 \begin{theorem}
 \label{thm:1}
-Every infinite ultrametric space \( X \) contains a sequence \( (x_{n}) \) such that any free ultrafilter containing \( (x_{n}) \) is metrically Ramsey.
+Every infinite ultrametric space \( X \) contains a sequence \( \{x_{n}\} \) such that any free ultrafilter containing \( \{x_{n}\} \) is metrically Ramsey.
 \end{theorem}
 
 As a follow up, one may ask if similar structure exists when coloring a larger class of subsets of \( X \). The positive answer to this question is the keynote of this paper. In this connection, we will analyze the family \( \Gamma_{X}  \) of all compact subsets of \( X \).
@@ -37,7 +37,7 @@ Given this, we say that a free ultrafilter \( \mathcal{F}  \) on \( X \) is \emp
 In this context, our main result is the following.
 \begin{theorem}
 \label{main:result}
-Every infinite ultrametric space \( X \) contains a sequence \( (x_{n}) \) such that every free ultrafilter containing \( (x_{n}) \) is diametrically Ramsey.
+Every infinite ultrametric space \( X \) contains a sequence \( \{x_{n}\} \) such that every free ultrafilter containing \( \{x_{n}\} \) is diametrically Ramsey.
 \end{theorem}
 
 Building towards the main result, the following two sections review some elementary properties of ultrametric spaces and filters. We then prove Theorem \ref{main:result} in Section \ref{sec:4}.

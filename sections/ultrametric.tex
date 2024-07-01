@@ -7,7 +7,7 @@ However, there are much more interesting constructions. These include ultrametri
 
 \subsubsection{The Baire space} We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \), which is the space of all sequences of natural numbers.
 
-For two distinct sequences \( x =  (x_{n}) \), \( y = (y_{n} ) \) in \( \mathbb{N}^{\mathbb{N}}   \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. Set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,x) = 0 \). We claim that \( d \) is an ultrametric on the Baire space.
+For two distinct sequences \( x =  \{x_{n}\} \), \( y = \{y_{n} \} \) in \( \mathbb{N}^{\mathbb{N}}   \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. Set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,x) = 0 \). We claim that \( d \) is an ultrametric on the Baire space.
 \begin{proof}
 The symmetry and non-negativity of \( d \) are immediate. Furthermore, \( d(x,x) = 0 \) by definition, and if \( d(x,y) = 0  \) then \( x = y \) since \( m(x,y)^{-1} > 0 \). To prove the ultrametric inequality for \( d \), fix \( x,y,z \in \mathbb{N} ^{\mathbb{N} }  \). Assume \( x,y,z \) are distinct sequences, otherwise the inequality is clear. Observe that
 \begin{align*}
