@@ -7,9 +7,9 @@ However, there are much more interesting constructions. These include ultrametri
 
 \subsubsection{The Baire space} We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \), which is the space of all sequences of natural numbers.
 
-For two distinct sequences \( x =  \{x_{n}\} \), \( y = \{y_{n} \} \) in \( \mathbb{N}^{\mathbb{N}}   \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. Set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,x) = 0 \). We claim that \( d \) is an ultrametric on the Baire space.
+For two distinct sequences \( x =  (x_{n}) \), \( y = (y_{n}) \) in \( \mathbb{N}^{\mathbb{N}}   \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. Set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,x) = 0 \). We claim that \( d \) is an ultrametric on the Baire space.
 \begin{proof}
-The symmetry and non-negativity of \( d \) are immediate. Furthermore, \( d(x,x) = 0 \) by definition, and if \( d(x,y) = 0  \) then \( x = y \) since \( m(x,y)^{-1} > 0 \). To prove the ultrametric inequality for \( d \), fix \( x,y,z \in \mathbb{N} ^{\mathbb{N} }  \). Assume \( x,y,z \) are distinct sequences, otherwise the inequality is clear. Observe that
+The symmetry and non-negativity of \( d \) are immediate. Furthermore, \( d(x,x) = 0 \) by definition, and if \( d(x,y) = 0  \) then \( x = y \) since \( m(x,y)^{-1} > 0 \) for distinct \( x,y \). To prove the ultrametric inequality for \( d \), fix \( x,y,z \in \mathbb{N} ^{\mathbb{N} }  \). Assume \( x,y,z \) are distinct sequences, otherwise the inequality is clear. Observe that
 \begin{align*}
 	&d(x,y) \leq \max \{ d(x,z), d(z,y) \} \\
 	&\Leftrightarrow m(x,y)^{-1} \leq \max \{ m(x,z)^{-1} , m(z,y)^{-1}  \}  \\
@@ -109,7 +109,7 @@ Furthermore, it turns out that all open balls are also closed in \( X \).
 If \( B_{r } (x) \) is an open ball in \( X \) then \( X \setminus  B_{r} (x) \) is open. In particular, \( B_{r} (x) \) is closed.
 \end{lemma}
 \begin{proof}
-We show that \( X \setminus B_{r} (x) \) is a union of open balls. By contradiction, assume there is a point \( t \in X \setminus B_{r} (x) \) which is not an interior point of \( X \setminus B_{r} (x) \). That is, for every \( q > 0 \) the ball \( B_{q} (t) \) is not contained in \( X \setminus B_{r} (x) \), meaning \( B_{q} (t) \cap B_{r} (x) \neq \emptyset  \). In particular, if \( q = r \) one deduces from Lemma \ref{lem:3} that \( B_{r} (x) = B_{q} (t) \). But then \( t \in X \setminus B_{r} (x) = X \setminus B_{q} (t) \) is a contradiction. Therefore, \( X \setminus B_{r} (x) \) is a union of open balls so that \( B_{r} (x) \) is closed.
+Assume by contradiction that \( X \setminus B_{r} (x) \) is not open. So there is a point \( t \in X \setminus B_{r} (x) \) which is not an interior point of \( X \setminus B_{r} (x) \). That is, for every \( q > 0 \) the ball \( B_{q} (t) \) is not contained in \( X \setminus B_{r} (x) \), meaning \( B_{q} (t) \cap B_{r} (x) \neq \emptyset  \). In particular, if \( q = r \) one deduces from Lemma \ref{lem:3} that \( B_{r} (x) = B_{q} (t) \). But then \( t \in X \setminus B_{r} (x) = X \setminus B_{q} (t) \) is a contradiction. Therefore, \( X \setminus B_{r} (x) \) is a open, so \( B_{r} (x) \) is closed.
 \end{proof}
 Our final application of the ultrametric inequality is to the diameter of subsets of the space.
 \begin{lemma}

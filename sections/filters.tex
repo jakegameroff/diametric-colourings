@@ -7,7 +7,7 @@ Recall from the introduction that a \emph{filter} \( \mathcal{F}  \) on \( X \) 
 The first lemma is the following.
 \begin{lemma}
 \label{filter:1}
-If \( \mathcal{A}  \) is a non-empty family of subsets of \( X \) such that the intersection of finitely many sets in \( \mathcal{A}   \) is non-empty, then there is a filter \( \mathcal{F}  \) which contains \( \mathcal{A} \).
+If \( \mathcal{A}  \) is a non-empty family of subsets of \( X \) such any intersection of finitely many sets in \( \mathcal{A}   \) is non-empty, then there is a filter \( \mathcal{F}  \) which contains \( \mathcal{A} \).
 \end{lemma}
 \begin{proof}
 First let \( \mathcal{F}' =  \mathcal{A} \cup \mathcal{I} \), where \( \mathcal{I} \) is the set of all finite intersections of elements of \( \mathcal{A}   \). Then \( \mathcal{F'}  \) is closed under finite intersections. Then let \( \mathcal{F} = \mathcal{F}' \cup \mathcal{S}  \), where \( A \in \mathcal{S}  \) if and only if \( A \) contains a set in \( \mathcal{A} \cup \mathcal{I}  \).
@@ -18,23 +18,25 @@ If \( A, B \in \mathcal{F}  \), the only non-trivial case needing consideration 
 \end{proof}
 \begin{lemma}
 \label{filter:2}
-A family \( \mathcal{F}  \) is an ultrafilter if and only if for every subset \( A \subseteq X \) either \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \).
+A filter \( \mathcal{F}  \) is an ultrafilter if and only if for every subset \( A \subseteq X \) either \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \).
 \end{lemma}
 \begin{proof}
-For ``$\Rightarrow$'' Let \( \mathcal{F}  \) be an ultrafilter and suppose for a contradiction that there is a subset \( A \subseteq X \) with \( A \notin \mathcal{F}  \) and \( A^{c} \notin \mathcal{F}  \). So every set in \( \mathcal{F}  \) intersects both \( A \) and \( A^{c}  \). Using this and the fact that \( \mathcal{F}  \) is a filter, it follows that any finite sub-collection of \( \mathcal{F} \cup \{ A \}  \) has a non-empty intersection. Then, Lemma \ref{filter:1} implies that there is a filter containing \( \mathcal{F} \cup \{ A \}  \) and hence \( \mathcal{F}  \), which contradicts our choice of \( \mathcal{F}  \).
+For ``$\Rightarrow$'', let \( \mathcal{F}  \) be an ultrafilter and suppose for a contradiction that there is a subset \( A \subseteq X \) with \( A \notin \mathcal{F}  \) and \( A^{c} \notin \mathcal{F}  \). So every set in \( \mathcal{F}  \) intersects both \( A \) and \( A^{c}  \). Using this and the fact that \( \mathcal{F}  \) is a filter, it follows that any finite sub-collection of \( \mathcal{F} \cup \{ A \}  \) has a non-empty intersection. Then, Lemma \ref{filter:1} implies that there is a filter containing \( \mathcal{F} \cup \{ A \}  \) and hence \( \mathcal{F}  \), which contradicts our choice of \( \mathcal{F}  \).
 
 Now suppose for ``$\Leftarrow$" that \( \mathcal{F}  \) is a filter such that for every subset \( A \subseteq X \) either \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \). Assume for a contradiction that \( \mathcal{F}' \) is a filter which properly contains \( \mathcal{F}  \). So there is a subset \( E \subseteq X \) with \( E \in \mathcal{F} ' \) and \( E \notin \mathcal{F}  \). Thus \( E^{c} \in \mathcal{F}  \) and hence \( E^{c} \in \mathcal{F} ' \). But then \( \mathcal{F} ' \) contains the empty set since it is closed under finite intersections and \( \emptyset = E \cap E^{c} \in \mathcal{F} ' \), which is a contradiction.
 \end{proof}
 We will say that a filter \( \mathcal{F}  \) has the \emph{Ramsey property} if whenever \( \medcup_{j=1}^{n} A_{j}  \in \mathcal{F}  \) there is a \( j \in [n] \) with \( A_{j} \in \mathcal{F}  \). In this connection, we have the following surprising result.
 \begin{lemma}
 \label{filter:3}
-A family \( \mathcal{F}  \) is an ultrafilter if and only if \( \mathcal{F}  \) has the Ramsey property.
+A filter \( \mathcal{F}  \) is an ultrafilter if and only if \( \mathcal{F}  \) has the Ramsey property.
 \end{lemma}
 \begin{proof}
 	Let \( \mathcal{F}  \) be an ultrafilter and suppose for a contradiction that \( A = A_1 \cup A_2 \) is in \( \mathcal{F}\) but \( A_1, A_2 \notin \mathcal{F}  \). From Lemma \ref{filter:2}, we have \( A_1^{c} , A_2^{c} \in \mathcal{F}  \) so that \( A^{c} = A_1^{c} \cap A_2^{c} \in \mathcal{F}  \). Consequently, \( \emptyset = A \cap A^{c} \in \mathcal{F}  \) is a contradiction. The case where \( A = A_1 \cup \cdots \cup A_{n}  \) follows via elementary induction. Conversely, assume \( \mathcal{F}  \) has the Ramsey property. If \( \mathcal{F}  \) is not an ultrafilter, then there is a subset \( A \subseteq X \) with \( A \notin \mathcal{F}  \) and \( A^{c} \notin \mathcal{F}  \). But \(X \in \mathcal{F}  \) and \( X = A \cup A^{c}  \), so we must have \( A \in \mathcal{F}  \) or \( A^{c} \in \mathcal{F}  \), contradicting our choice of \( A \).
 \end{proof}
 
-For a family \( \mathcal{F}  \) of subsets of \( X \), we define its \emph{dual} \( \mathcal{F} ^{\ast}  \) to be the collection of all subsets of \( X \) which intersect every set in \( \mathcal{F}  \). For instance, every ultrafilter \( \mathcal{F}  \) satisfies \( \mathcal{F} = \mathcal{F} ^{\ast}  \), as pointed out by Brian \cite{brian:2016}.
+For a family \( \mathcal{F}  \) of subsets of \( X \), we define its \emph{dual} \( \mathcal{F} ^{\ast}  \) to be the collection of all subsets of \( X \) which intersect every set in \( \mathcal{F}  \).
+
+A simple example of families and their duals is as follows \cite{brian:2016}. We call a subset \( A \subseteq \mathbb{N}  \) \emph{thick} if it contains intervals of arbitrary lengths; and we call \( A \) \emph{syndetic} if the space between its intervals is bounded. That is, \( A \) is syndetic if there is an integer \( N \in \mathbb{N}  \) such that every interval of length \( N \) contains a point in \( A \). Then, the dual of the family of syndetic subsets of \( \mathbb{N} \) is the class of thick sets in \( \mathbb{N}  \).
 
 The following result, due to Glasner, relates ultrafilters to their duals \cite{glasner:1980}. We provide its proof here for clarity.
 
