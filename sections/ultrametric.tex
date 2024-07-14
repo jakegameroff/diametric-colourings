@@ -1,60 +1,60 @@
 %! TeX root: ../main.tex
 \section{Ultrametric Analysis}
 In this brief section, we introduce some notable examples of ultrametric spaces and survey some of their fundamental properties.
-\subsection{Examples: The space \( \mathbb{N} ^{\mathbb{N} } \), graphs, and \( \varepsilon  \)-chains} The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. A slightly more complicated ultrametric space is \( (\mathbb{N} , d) \), where \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \}  \) if \( n \neq m \) and \( d(n, m) = 0 \) otherwise.
+\subsection{Examples: The space \( \mathbb{N} ^{\mathbb{N} } \), graphs, \( \varepsilon \)-chains} The simplest example of an ultrametric on a set $X$ is the discrete metric $d$, where $d(x,y)$ is 1 if $x \neq y$ and 0 otherwise. A slightly more complicated example is the ultrametric given by \( d(n,m) = \max \{ 1 + 1/n , 1 + 1/m \} \) and \( d(n, n) = 0 \), where \( n , m  \) are distinct positive integers in \( \mathbb{N}  \).
 
 However, there are much more interesting constructions. These include ultrametrics on the Baire space $\mathbb{N} ^{\mathbb{N} }$, connected graphs, and uniformly disconnected metric spaces, which we will now construct.
 
-\subsubsection{The Baire space} We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} }  \), which is the space of all sequences of natural numbers.
+\subsubsection{The Baire space} We will first discuss the \emph{Baire space} \( \mathbb{N} ^{\mathbb{N} } \), which is the space of all sequences of natural numbers.
 
-For two distinct sequences \( x =  (x_{n}) \), \( y = (y_{n}) \) in \( \mathbb{N}^{\mathbb{N}}   \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k}  \}  \) to be the first index at which \( x \) and \( y \) do not coincide. Set \( d(x,y) = m(x,y)^{-1}  \) with \( d(x,x) = 0 \). We claim that \( d \) is an ultrametric on the Baire space.
+For two distinct sequences \( x = (x_{n}) \), \( y = (y_{n}) \) in \( \mathbb{N} \), we define \( m(x,y) = \min \{ k \in \mathbb{N} : x_{k} \neq y_{k} \} \) to be the first index at which \( x \) and \( y \) do not coincide. Set \( d(x,y) = m(x,y)^{-1} \) with \( d(x,x) = 0 \). We claim that \( d \) is an ultrametric on the Baire space.
 \begin{proof}
-The symmetry and non-negativity of \( d \) are immediate. Furthermore, \( d(x,x) = 0 \) by definition, and if \( d(x,y) = 0  \) then \( x = y \) since \( m(x,y)^{-1} > 0 \) for distinct \( x,y \). To prove the ultrametric inequality for \( d \), fix \( x,y,z \in \mathbb{N} ^{\mathbb{N} }  \). Assume \( x,y,z \) are distinct sequences, otherwise the inequality is clear. Observe that
+The symmetry and non-negativity of \( d \) are immediate. Furthermore, \( d(x,x) = 0 \) by definition, and if \( d(x,y) = 0 \) then \( x = y \) since \( m(x,y)^{-1} > 0 \) for distinct \( x,y \). To prove the ultrametric inequality for \( d \), fix \( x,y,z \in \mathbb{N} ^{\mathbb{N} } \). We assume \( x,y,z \) are distinct sequences, otherwise the inequality is clear. Observe that
 \begin{align*}
-	&d(x,y) \leq \max \{ d(x,z), d(z,y) \} \\
-	&\Leftrightarrow m(x,y)^{-1} \leq \max \{ m(x,z)^{-1} , m(z,y)^{-1}  \}  \\
-	&\Leftrightarrow m(x,y)^{-1}  \leq \min \{ m(x,z), m(z,y) \} ^{-1} \\
-	&\Leftrightarrow m(x,y) \geq \min \{ m(x,z), m(z,y) \}.
+&d(x,y) \leq \max \{ d(x,z), d(z,y) \} \\
+&\Leftrightarrow m(x,y)^{-1} \leq \max \{ m(x,z)^{-1} , m(z,y)^{-1} \} \\
+&\Leftrightarrow m(x,y)^{-1} \leq \min \{ m(x,z), m(z,y) \} ^{-1} \\
+&\Leftrightarrow m(x,y) \geq \min \{ m(x,z), m(z,y) \}.
 \end{align*}
-Clearly \( m(x,y) \geq \min \{ m(x,z), m(z,y) \}  \). Otherwise, \( m(x,y) < m(x,z) \) and \( m(x,y) < m(z,y) \). Letting \( \ell = m(x,y) \), we see that \( x_{\ell} \neq y_{\ell}  \), but since both \( m(x,z), m(z,y) \geq \ell + 1 \), we have \( x_{\ell} = z_{\ell} = y_{\ell}  \), a contradiction. Therefore, \( d \) is an ultrametric.
+Clearly \( m(x,y) \geq \min \{ m(x,z), m(z,y) \} \). Otherwise, \( m(x,y) < m(x,z) \) and \( m(x,y) < m(z,y) \). Letting \( \ell = m(x,y) \), we see that \( x_{\ell} \neq y_{\ell} \), but since both \( m(x,z), m(z,y) \geq \ell + 1 \), we have \( x_{\ell} = z_{\ell} = y_{\ell} \), a contradiction. Therefore, \( d \) is an ultrametric.
 \end{proof}
-\subsubsection{Graphs} The following construction is inspired by Leclerc's elegant work in \cite{leclerc:1981}. Let \( G \) be a connected graph with positive edge-weights. For an edge \( e \) in \( G \), let \( w(e) \) denote its weight.
+\subsubsection{Graphs} The following construction is inspired by Leclerc's elegant work in \cite{leclerc:1981}. Let \( G \) be a connected graph with positive edge-weights. For an edge \( e \) in \( G \), we denote its weight by \( w(e) \).
 
-A \emph{walk} in \( G \) is a finite sequence of adjacent vertices. Given a walk \( x \), we will denote by \( e_{x} \) an edge in the walk with maximum weight. We say that a walk \( x \) between two vertices \( u , v \) is a \emph{minimax walk} if there is no other walk \( x' \) between \( u,v \) whose max-weight edge is lighter than \( e_{x}  \). Equivalently, \( w(e_{x}) \leq w(e_{x'}) \) for every walk \( x' \) between \( u,v \).
+A \emph{walk} in \( G \) is a finite sequence of adjacent vertices. Given a walk \( x \), we will denote by \( e_{x} \) an edge in the walk with maximum weight. We say that a walk \( x \) between two vertices \( u , v \) is a \emph{minimax walk} if there is no other walk \( x' \) between \( u,v \) whose max-weight edge is lighter than \( e_{x} \). Equivalently, \( w(e_{x}) \leq w(e_{x'}) \) for every walk \( x' \) between \( u,v \).
 
-If we think of an edge's weight as the difficulty level of traveling from one of its ends to the other, the minimax walk from \( u \) to \( v \) minimizes the most challenging part of the journey.
+If we think of an edge's weight as the difficulty level of travelling from one of its ends to the other, the minimax walk from \( u \) to \( v \) minimises the most challenging part of the journey.
 
-We can use this notion to define an ultrametric on \( V(G) \). Specifically, given two distinct vertices \( u,v \in V(G) \) with minimax walk \( x \), we set \( d(u, v) = w(e_{x}) \), with \( d(u,u) = 0 \). The proof that \( d \) is an ultrametric is as follows.
+We can use this notion to define an ultrametric on \( V(G) \). Specifically, given two distinct vertices \( u,v \in V(G) \) with minimax walk \( x \), we set \( d(u, v) = w(e_{x}) \) with \( d(u,u) = 0 \). The proof that \( d \) is an ultrametric is as follows.
 
 \begin{proof}
 That \( d \) is symmetric and non-negative is clear. By definition, \( d(u, u) = 0 \) and if \( d(u, v) = 0 \) then \( u = v \), as otherwise there is an edge in \( G \) with weight 0 even though its edges have only positive weights.
 
-To prove the ultrametric inequality, fix \( u, v, w \in V(G) \). We may assume that \( u,v,w \) are distinct, else the inequality immediately follows. Let \( x_{u,w} = (v_1, v_2, \hdots , v_{m}) \) and \( x_{w,v} = (v_{m}, v_{m+1} , \hdots , v_{n}) \) denote minimax walks between \( u,w \) and \( w,v \) respectively, and let \( x = (v_1, v_2, \hdots , v_{n}) \) be their union. Then the max-weight edge in \( x \) has weight \( \max \{ d (u, w), d (w,v) \}  \). Since \( x \) is a walk between \( u,v \), we have \( d (u, v) \leq \max \{ d (u,w), d (w,v) \}  \), as claimed.
+To prove the ultrametric inequality, fix \( u, v, w \in V(G) \). We may assume that \( u,v,w \) are distinct, else the inequality follows. Let \( x_{u,w} = (v_1, v_2, \hdots , v_{m}) \) and \( x_{w,v} = (v_{m}, v_{m+1} , \hdots , v_{n}) \) denote minimax walks between \( u,w \) and \( w,v \) respectively, and let \( x = (v_1, v_2, \hdots , v_{n}) \) be their union. Then the max-weight edge in \( x \) has weight \( \max \{ d (u, w), d (w,v) \} \). Since \( x \) is a walk between \( u,v \), we have \( d (u, v) \leq \max \{ d (u,w), d (w,v) \} \), as claimed.
 \end{proof}
 
-\subsubsection{Uniformly disconnected spaces} The theory below is based on Guy and Semmes' work in \cite{fractal:1997} and Heinonen's construction in \cite{metric:2001}.
+\subsubsection{Uniformly disconnected spaces} The theory below is based on Guy and Semmes' work in \cite{fractal:1997} and Heinonen's ideas in \cite{metric:2001}.
 
-Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon  \)-chain} between the pair \( x,y \in  X \) is a finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y  \) with \[\max_{1 \leq i \leq n}  d(x_{i-1} , x_{i})  \leq \varepsilon \cdot d(x,y). \] In this case, we say that \( x, y \) are \emph{\( \varepsilon  \)-connected}. Observe that if \( x, y \) are \( \varepsilon  \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon  \); and if \( x, y \) can not be \( \varepsilon  \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon  \).
-
-
-The space \( X \) is called \emph{uniformly disconnected} if there is an \( \varepsilon > 0 \) such that no two points in \( X \) can be \( \varepsilon  \)-connected. It is not hard to prove that uniform disconnectivity is stronger than total disconnectivity. To give some intuition, we note that the middle thirds Cantor set is uniformly disconnected and the set \( \{ 1/n : n \in \mathbb{N}  \}  \) is not \cite{metric:2001}.
+Let \( (X,d) \) be any metric space and \( \varepsilon > 0 \) be given. An \emph{\( \varepsilon \)-chain} between the pair \( x,y \in X \) is any finite sequence \( x = x_0 , x_1, \hdots , x_{n} = y \) with \[\max_{1 \leq i \leq n} d(x_{i-1} , x_{i}) \leq \varepsilon \cdot d(x,y). \] In this case, we say that \( x, y \) are \emph{\( \varepsilon \)-connected}. Observe that if \( x, y \) are \( \varepsilon \)-connected then they are \( \varepsilon ' \)-connected for every \( \varepsilon ' \geq \varepsilon \); and if \( x, y \) can not be \( \varepsilon \)-connected then they can not be \( \varepsilon ' \)-connected for every \( \varepsilon ' \leq \varepsilon \).
 
 
-Let \( (X,d) \) be a uniformly disconnected metric space. For \( x,y \in X \), let \( c(x,y) \) be the infimum over all \( \varepsilon > 0 \) such that \( x \) and \( y \) are \( d(x,y)^{-1} \cdot \varepsilon  \)-connected. Then \( c \) is an ultrametric on \( X \).
+The space \( X \) is called \emph{uniformly disconnected} if there is an \( \varepsilon > 0 \) such that no two distinct points in \( X \) can be \( \varepsilon \)-connected. It is not hard to prove that uniform disconnectivity is stronger than total disconnectivity. To give some intuition, we note that with the Euclidean metric the middle thirds Cantor set is uniformly disconnected and the set \( \{ 1/n : n \in \mathbb{N} \} \) is not \cite{metric:2001}.
+
+
+Let \( (X,d) \) be a uniformly disconnected metric space. For distinct points \( x,y \in X \) we define \( c(x,y) \) to be the infimum over all \( \varepsilon > 0 \) such that \( x \) and \( y \) are \( d(x,y)^{-1} \cdot \varepsilon \)-connected, with \( c(x,x) = 0 \).
 \begin{proof}
-Clearly \( c \) is symmetric and non-negative. If \( x = y \) then \( x,y \) are \( \varepsilon  \)-connected for every \( \varepsilon > 0 \) so that \( c(x,y) = 0 \). On the other hand, if \( c(x,y) = 0  \) then \( x = y \), otherwise \( x,y \) are \( \varepsilon  \)-connected for every \( \varepsilon > 0 \), contradicting the uniform disconnectivity of \( X \).
+Clearly \( c \) is symmetric and non-negative. By definition, \( c(x,x) = 0 \), and if \( c(x,y) = 0 \) then \( x = y \), otherwise \( x,y \) are \(d(x,y)^{-1} \cdot \varepsilon \)-connected for every \( \varepsilon > 0 \), contradicting the uniform disconnectivity of \( X \).
 
-The last thing to prove is the ultrametric inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate. By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \(\gamma_1 \leq c(x,z) + \varepsilon \) and \(\gamma_2 \leq c(z,y) + \varepsilon  \) such that \( x,z \) are \( d(x,z)^{-1} \cdot \gamma_1 \)-connected and \( z,y \) are \(d(z,y)^{-1} \cdot \gamma_2 \)-connected. Hence we obtain sequences
+The last thing to prove is the ultrametric inequality for \( c \). To this end, fix \( x,y,z \in X \) and let \( \varepsilon > 0 \) be given. We may assume the points \( x,y,z \) are distinct, otherwise the claim is immediate. By definition of the infimum, there exist \( \gamma_1, \gamma_2 > 0 \) with \(\gamma_1 \leq c(x,z) + \varepsilon \) and \(\gamma_2 \leq c(z,y) + \varepsilon \) such that \( x,z \) are \( d(x,z)^{-1} \cdot \gamma_1 \)-connected and \( z,y \) are \(d(z,y)^{-1} \cdot \gamma_2 \)-connected. Hence we obtain sequences
 \begin{itemize}[leftmargin=0.8cm]
-	\item \( x = x_0, x_1, \hdots x_{m} = z  \) with \( \max_{1 \leq i \leq m} d(x_{i-1} , x_{i}) \leq \gamma_1 \); and
-	\item \( z = x_{m} , x_{m+1} , \hdots , x_{n} = y \) with \( \max_{m+1 \leq i \leq n} d(x_{i-1} , x_{i}) \leq \gamma_2 \). 
+\item \( x = x_0, x_1, \hdots x_{m} = z \) with \( \max_{1 \leq i \leq m} d(x_{i-1} , x_{i}) \leq \gamma_1 \); and
+\item \( z = x_{m} , x_{m+1} , \hdots , x_{n} = y \) with \( \max_{m+1 \leq i \leq n} d(x_{i-1} , x_{i}) \leq \gamma_2 \). 
 \end{itemize}
-Now set \( \gamma = \max \{ \gamma_1, \gamma_2 \}  \) and observe that \( x,y \) are \(d(x,y)^{-1}\cdot \gamma \)-connected since \[ \max _{1 \leq i \leq n} d(x_{i-1} , x_{i} ) \leq \gamma = \frac{\gamma}{d(x,y)} \cdot d(x,y). \] 
-Then
+Now set \( \gamma = \max \{ \gamma_1, \gamma_2 \} \) and note that \( x,y \) are \(d(x,y)^{-1}\cdot \gamma \)-connected since \[ \max _{1 \leq i \leq n} d(x_{i-1} , x_{i} ) \leq \gamma = \frac{\gamma}{d(x,y)} \cdot d(x,y). \] 
+So
 \begin{align*}
-	c(x,y) \leq \gamma &= \max \{ \gamma_1, \gamma_2 \} \\
-	       &\leq \max \{ c(x,z) + \varepsilon , c(z,y) + \varepsilon  \} \\
-	       &= \max \{ c(x,z), c(z,y) \} + \varepsilon,
+c(x,y) \leq \gamma &= \max \{ \gamma_1, \gamma_2 \} \\
+&\leq \max \{ c(x,z) + \varepsilon , c(z,y) + \varepsilon \} \\
+&= \max \{ c(x,z), c(z,y) \} + \varepsilon,
 \end{align*}
 and sending \( \varepsilon \to 0 \) yields \( c(x,y) \leq \max \{ c(x,z), c(z,y) \} \).
 \end{proof}
@@ -68,14 +68,14 @@ If \( x, y, z \) are distinct points in an ultrametric space \( X \) and \( d(x,
 \begin{proof}
 Since \( d(x,z) < d(z,y) \), the ultrametric inequality implies
 \begin{align*}
-	d(x,y) \leq \max \{ d(x,z), d(z,y) \} = d(z,y).
+d(x,y) \leq \max \{ d(x,z), d(z,y) \} = d(z,y).
 \end{align*}
-Furthermore, \( d(x,z) < d(x,y) \) else \[ d(z,y) \leq \max \{ d(x,z), d(x,y) \} = d(x,z) \] is a contradiction. Thus, \( d(z , y) \leq \max \{ d(z,x), d(x,y) \} = d(x,y) \). Combining everything together, we conclude that \( d(x,y) = d(z,y) \).
+Furthermore, \( d(x,z) < d(x,y) \) else \[ d(z,y) \leq \max \{ d(x,z), d(x,y) \} = d(x,z) \] is a contradiction. Thus, \( d(z , y) \leq \max \{ d(z,x), d(x,y) \} = d(x,y) \). Combining inequalities, we conclude that \( d(x,y) = d(z,y) \).
 \end{proof}
 
-We now examine open balls in ultrametric spaces. An \emph{open ball} (or simply a ball) of radius \( r > 0 \) centered about \( x \in  X \) is the set \[ B_{r }(x) = \{ y \in X : d(x,y) < r \}.  \] A subset \( \mathcal{O}  \) of \( X \) is called \emph{open} if it can be written as a union of open balls. A set is \emph{closed} if its complement is open.
+We now examine open balls in ultrametric spaces. An \emph{open ball} (or simply a ball) of radius \( r > 0 \) centred about \( x \in X \) is the set \[ B_{r }(x) = \{ y \in X : d(x,y) < r \}. \] A subset \( U \subseteq X \) is called \emph{open} if it is a union of open balls. A set is \emph{closed} if its complement is open.
 
-Open balls in ultrametric spaces have vastly unintuitive properties. For example, every point in a ball is its center.
+Open balls in ultrametric spaces have vastly unintuitive properties. For example, every point in a ball is its centre.
 
 \begin{lemma}
 \label{lem:2}
@@ -84,39 +84,43 @@ Let \( B_{r} (x) \) be an open ball in \( X \). Then \( B_{r} (x) = B_{r} (y) \)
 \begin{proof}
 Let \( y \) be any point in \( B_{r} (x) \). So \( d(x,y) < r \), and if \( t \in B_{r}(y) \) then \( d(y,t) < r \). Then \( t \in B_{r} (x) \) since \( d(x,t) \leq \max \{ d(x,y) , d(y,t) \} < r \). Hence \( B_{r} (y) \subseteq B_{r} (x) \), and the reverse inclusion follows symmetrically as \( x \in B_{r} (y) \).
 \end{proof}
-Another important result is that if two balls intersect then one of them contains the other. More generally, we have the following lemma.
+Another important result is that if two balls intersect then one of them contains the other.
 \begin{lemma}
 \label{lem:3}
 Let \( B_{r} (x) \) and \( B_{q} (y) \) be a pair of intersecting balls in \( X \) with \( r \leq q \). Then \( B_{r} (x) \subseteq B_{q} (y) \).
 \end{lemma}
 \begin{proof}
-	Since the two balls intersect, there is a point \( t \in B_{r} (x) \cap B_{q} (y) \). Thus, Lemma \ref{lem:2} implies that \( B_{r} (t) = B_{r} (x) \) and \( B_{q} (t) = B_{q} (y) \), and since \( r \leq q \) we obtain \( B_{r} (x) = B_{r} (t) \subseteq B_{q} (t) = B_{q} (y), \) as required.
+Since the two balls intersect, there is a point \( t \in B_{r} (x) \cap B_{q} (y) \). Thus, Lemma \ref{lem:2} implies that \( B_{r} (t) = B_{r} (x) \) and \( B_{q} (t) = B_{q} (y) \), and since \( r \leq q \) we obtain \( B_{r} (x) = B_{r} (t) \subseteq B_{q} (t) = B_{q} (y), \) as required.
 \end{proof}
-A generalization of Lemma \ref{lem:3} is as follows.
+Open balls also interact with general subsets of \( X \) in a unique way.
 \begin{lemma}
 \label{lem:4}
 Let \( A \subseteq X \) and consider any ball \(B_{r } (x) \) in \( X \). If \( B_{r } (x) \) intersects \( A \) then \( A \cap B_{r} (x) \) is a ball in the space \( (A, d) \).
 \end{lemma}
 \begin{proof}
-Since \( A \cap B_{r} (x) \neq \emptyset  \), there is a point \( t \in A \cap B_{r} (x) \). Let \( B_{A} = \{ a \in A : d(t,a) < r \}  \) be a ball in \( A \). We show that \( A \cap B_{r} (x) = B_{A}  \).
+Since \( A \cap B_{r} (x) \neq \emptyset \) there is a point \( t \in A \cap B_{r} (x) \). Let \( B_{A} = \{ a \in A : d(t,a) < r \} \) be a ball in \( A \). We show that \( A \cap B_{r} (x) = B_{A} \).
 
-Note from Lemma \ref{lem:2} that \( t \) is the center of \( B_{r } (x) \) so that \( A \cap B_{r } (x) = A \cap B_{r } (t) \). Then if \( a \in A \cap B_{r} (x) \) we have \( a \in A \cap B_{r } (t) \) so that \( d(t, a) < r  \) and hence \( a \in B_{A} \). On the other hand, if \( a \in B_{A}  \) then from the ultrametric inequality we obtain \[ d(x, a) \leq \max \{ d(x,t), d(t,a) \} < r , \] since \( t \in B_{r } (x) \). Hence \( a \in A \cap B_{r } (x) \) and we're done.
+Note from Lemma \ref{lem:2} that \( t \) is the centre of \( B_{r } (x) \) so that \( A \cap B_{r } (x) = A \cap B_{r } (t) \). Then if \( a \in A \cap B_{r} (x) \) we have \( a \in A \cap B_{r } (t) \) so that \( d(t, a) < r \) and hence \( a \in B_{A} \). On the other hand, if \( a \in B_{A} \) then from the ultrametric inequality we obtain \[ d(x, a) \leq \max \{ d(x,t), d(t,a) \} < r , \] since \( t \in B_{r } (x) \). Hence \( a \in A \cap B_{r } (x) \) and we're done.
 \end{proof}
 
 Furthermore, it turns out that all open balls are also closed in \( X \).
 \begin{lemma}
 \label{lem:5}
-If \( B_{r } (x) \) is an open ball in \( X \) then \( X \setminus  B_{r} (x) \) is open. In particular, \( B_{r} (x) \) is closed.
+If \( B_{r } (x) \) is an open ball then \( X \setminus B_{r} (x) \) is open in \( X \). In particular, \( B_{r} (x) \) is closed.
 \end{lemma}
 \begin{proof}
-Assume by contradiction that \( X \setminus B_{r} (x) \) is not open. So there is a point \( t \in X \setminus B_{r} (x) \) which is not an interior point of \( X \setminus B_{r} (x) \). That is, for every \( q > 0 \) the ball \( B_{q} (t) \) is not contained in \( X \setminus B_{r} (x) \), meaning \( B_{q} (t) \cap B_{r} (x) \neq \emptyset  \). In particular, if \( q = r \) one deduces from Lemma \ref{lem:3} that \( B_{r} (x) = B_{q} (t) \). But then \( t \in X \setminus B_{r} (x) = X \setminus B_{q} (t) \) is a contradiction. Therefore, \( X \setminus B_{r} (x) \) is a open, so \( B_{r} (x) \) is closed.
+Assume \( X \setminus B_{r} (x) \) is not open. So there is a point \( t \in X \setminus B_{r} (x) \) which is not an interior point of \( X \setminus B_{r} (x) \). That is, for every \( q > 0 \) the ball \( B_{q} (t) \) is not contained in \( X \setminus B_{r} (x) \), meaning \( B_{q} (t) \cap B_{r} (x) \neq \emptyset \). In particular, if \( q = r \) one deduces from Lemma \ref{lem:3} that \( B_{r} (x) = B_{q} (t) \). But then \( t \in X \setminus B_{r} (x) = X \setminus B_{q} (t) \) is a contradiction. Therefore, \( X \setminus B_{r} (x) \) is open, so \( B_{r} (x) \) is closed.
 \end{proof}
+
+Lemma \ref{lem:5} implies that every ultrametric space \( X \) is \emph{zero-dimensional}, meaning that every open set in \( X \) is a union of clopen (both open and closed) sets. Using this and the fact that ultrametric spaces are Hausdorff, it follows that every ultrametric space is totally disconnected.
+
 Our final application of the ultrametric inequality is to the diameter of subsets of the space.
 \begin{lemma}
 \label{lem:6}
-Let \( A \subseteq X \) be non-empty with \( a \in A \). Then \( \operatorname{diam} A = \sup \{ d(a, x) : x \in A \}   \).
+For a subset \( A \subseteq X \) with \( a \in A \), the quantity \[ \operatorname{diam} A = \sup \{ d(a,x) : x \in A \}. \]
 \end{lemma}
 \begin{proof}
-	Set \( u = \sup \{ d(a,x) : x \in A \}  \) and fix \( x,y \in A \). Then \[ d(x,y) \leq  \max \{ d(a,x), d(a,y) \} \leq u  \] so that \( u \) is an upper bound of \( D = \{ d(x,y) : x,y \in A \}  \). Since \( u = \sup_{} \{ d(a,x) : x \in A \}  \), for any given \( \varepsilon > 0 \) there is a point \( x_{\varepsilon } \in A \) with \( u \leq d(a, x_{\varepsilon }) + \varepsilon   \). But \( a, x_{\varepsilon } \in A \) so that \( u = \sup D = \operatorname{diam} A \) which completes the proof.
+Set \( u = \sup \{ d(a,x) : x \in A \} \) and fix \( x,y \in A \). Then \[ d(x,y) \leq \max \{ d(a,x), d(a,y) \} \leq u \] so that \( u \) is an upper bound of \( D = \{ d(x,y) : x,y \in A \} \). Now suppose \( u' \) is an upper bound of \( D \) with \( u' < u \). Then for each \( x \in A \) we have \( d(a,x) \leq u' < u \) contradicting our choice of \( u \). Hence, \( u = \sup D \).
 \end{proof}
 
+A nice consequence of Lemma \ref{lem:6} is that \( \operatorname{diam} B_{r} (x) \leq r \).

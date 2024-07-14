@@ -1,43 +1,43 @@
 %! TeX root: ../main.tex
 \section{Introduction}
-Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey proved in \cite{ramsey:1930} that for each \( k \in \mathbb{N}  \) there is a sufficiently large \( n \in \mathbb{N}  \) such that in any red-blue coloring of the edges of the complete graph \( K_{n} \) there is a set of \( k \) vertices joined by edges of the same color.
+Ramsey Theory explores the underlying structure emerging in ``large enough" complex systems. For example, Frank Ramsey proved in \cite{ramsey:1930} that for each \( k \in \mathbb{N} \) there is a sufficiently large \( n \in \mathbb{N} \) such that in any red-blue colouring of the edges of the complete graph \( K_{n} \) there is a set of \( k \) vertices joined by edges of the same colour.
 
-Another seminal result is Van der Waerden's theorem, which states that for all positive integers \( r, k \in \mathbb{N}  \) there is a large enough \( n \in \mathbb{N}  \) such that if we color the integers in \( [n] \coloneqq \{ 1,2,\hdots ,n \}  \) using \( k \) colors, one can always find a set of \( r \) monochromatic integers in arithmetic progression \cite{waerden:1927}.
+Another seminal result is Van der Waerden's theorem, which states that for all positive integers \( r, k \in \mathbb{N} \) there is a large enough \( n \in \mathbb{N} \) such that if we colour the integers in \( [n] = \{ 1,2,\hdots ,n \} \) using \( k \) colours, one can always find a set of \( r \) monochromatic integers in arithmetic progression \cite{waerden:1927}.
 
-Motivated by these classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will color a class of subsets of the space and search for a set whose subsets in this class are all the same color. We formalize this as follows.
+Motivated by these classical results, we study the structural properties of infinite spaces using a Ramsey-theoretic lens. In particular, we will colour a class of subsets of the space and search for a set whose subsets in this class are all the same colour. We formalise this now.
 
-Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N}  \) be a postive integer. For a family \( \mathcal{A} \) of subsets of \( X \), a \emph{coloring} of \( \mathcal{A}  \) is any mapping \( \chi : \mathcal{A} \to [k] \). We would like to find a set \( M \subseteq X \) and a color \( \varphi  \in [k] \) such that \( \chi(N) = \varphi  \) for every subset \( N \subseteq M \) with \(N \in \mathcal{A}  \). We then say that \( M \) is \emph{monochrome} over \( \mathcal{A}  \). A natural first choice is \( \mathcal{A} = [X]^{2}  \), the class of two-element subsets of \( X \).
+Fix an infinite metric space \( (X,d) \) and let \( k \in \mathbb{N} \) be a postive integer. For a family \( \mathcal{A} \) of subsets of \( X \), a \emph{colouring} of \( \mathcal{A} \) is any mapping \( \chi : \mathcal{A} \to [k] \). We would like to find a set \( M \subseteq X \) and a colour \( \varphi \in [k] \) such that \( \chi(N) = \varphi \) for every subset \( N \subseteq M \) with \(N \in \mathcal{A} \). We then say that \( M \) is \emph{monochrome} over \( \mathcal{A} \). A natural first choice is \( \mathcal{A} = [X]^{2} \), the class of two-element subsets of \( X \).
 
-In this context, the ``large" objects in \( X \) which we will work with are free ultrafilters. A \emph{filter} \( \mathcal{F}  \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all subsets \( A, B \subseteq X \):
+In this context, the ``large" objects in \( X \) which we will work with are free ultrafilters. A \emph{filter} \( \mathcal{F} \) on \( X \) is a collection of subsets of \( X \) satisfying the following for all subsets \( A, B \subseteq X \):
 \begin{enumerate}[leftmargin=1.2cm]
-	
-	\item If \( A \in \mathcal{F} \) and \( A \subseteq B \) then \( B \in \mathcal{F}  \);
-	\item If \( A, B \in \mathcal{F}  \) then \( A \cap B \in \mathcal{F}  \);
-	\item \( \emptyset  \notin \mathcal{F}  \) and \( X \in \mathcal{F}  \).
+
+\item If \( A \in \mathcal{F} \) and \( A \subseteq B \) then \( B \in \mathcal{F} \);
+\item If \( A, B \in \mathcal{F} \) then \( A \cap B \in \mathcal{F} \);
+\item \( \emptyset \notin \mathcal{F} \) and \( X \in \mathcal{F} \).
 \end{enumerate}
-A filter \( \mathcal{F}  \) is called an \emph{ultrafilter} if it is not properly contained in another filter. We call \( \mathcal{F}  \) \emph{free} if \( \medcap \mathcal{F} = \emptyset  \). Intuitively, ultrafilters are maximal filters and free filters are ``spread out" throughout the space, so we view \emph{free ultrafilters} as ``large" objects in \( X \).
+A filter \( \mathcal{F} \) is called an \emph{ultrafilter} if it is not properly contained in another filter. We call \( \mathcal{F} \) \emph{free} if \( \medcap \mathcal{F} = \emptyset \). Intuitively, ultrafilters are maximal filters and free filters are ``spread out" throughout the space, so we view \emph{free ultrafilters} as large objects in \( X \).
 
-Given that these are the large objects in focus, it is natural to ask whether there is a free ultrafilter \( \mathcal{F}  \) such that for every coloring of \( [X]^{2}  \) there is a monochrome set \( M \in \mathcal{F}  \). It turns out that this question is undecidable in ZFC even with \( X = \mathbb{N}  \), though the statement is true if we accept the continuum hypothesis \cite{protasov:2017}. Consequently, we must define more restrictive classes of colorings.
+Given that these are the large objects in focus, it is natural to ask whether there is a free ultrafilter \( \mathcal{F} \) such that for every colouring of \( [X]^{2} \) there is a monochrome set \( M \in \mathcal{F} \). It turns out that this question is undecidable in ZFC even with \( X = \mathbb{N} \), though the claim is true if we accept the continuum hypothesis \cite{protasov:2017}. Consequently, we must define more restrictive classes of colourings.
 
-Towards this end, Protasov and Protasova introduce the following theory in \cite{protasov:2017}. A coloring \( \chi : [X]^{2} \to [k]  \) of the two-element subsets of \( X \) is called \emph{isometric} if \( \chi (\{ x_1, y_1 \} ) = \chi (\{ x_2, y_2 \} ) \) whenever \( d(x_1, y_1) = d(x_2, y_2) \). A free ultrafilter \( \mathcal{F}  \) is called \emph{metrically Ramsey} if for every isometric coloring of \( [X]^{2}  \) there is a monochrome set \( M \in \mathcal{F}  \).
+Towards this end, Protasov and Protasova introduce the following theory in \cite{protasov:2017}. A colouring \( \chi : [X]^{2} \to [k] \) of the two-element subsets of \( X \) is called \emph{isometric} if \( \chi (\{ x_1, y_1 \} ) = \chi (\{ x_2, y_2 \} ) \) whenever \( d(x_1, y_1) = d(x_2, y_2) \). A free ultrafilter \( \mathcal{F} \) is called \emph{metrically Ramsey} if for every isometric colouring of \( [X]^{2} \) there is a monochrome set \( M \in \mathcal{F} \).
 
-It turns out that in the particular case of ultrametric spaces, metrically Ramsey free ultrafilters are not too hard to construct. Recall that an \emph{ultrametric} \( d \) on a set \( X \) is a metric satisfying the \emph{ultrametric inequality}, which states that for all \( x,y,z \in X \) \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \}.  \] Protasov and Protasova leverage the properties of the ultrametric to prove the following theorem \cite{protasov:2017}.
+It turns out that in the particular case of ultrametric spaces, metrically Ramsey free ultrafilters are not too hard to work with. Recall that an \emph{ultrametric} \( d \) on a set \( X \) is a metric satisfying the \emph{ultrametric inequality}, which states that for all \( x,y,z \in X \) \[ d(x,y) \leq \max \{ d(x,z), d(z,y) \}. \] Protasov and Protasova leverage the properties of the ultrametric to prove the following theorem \cite{protasov:2017}.
 
 \begin{theorem}
 \label{thm:1}
-Every infinite ultrametric space \( X \) contains a sequence \( (x_{n}) \) such that any free ultrafilter \( \mathcal{F}  \) with \( (x_{n}) \in \mathcal{F} \) is metrically Ramsey.
+Every infinite ultrametric space \( X \) contains a sequence \( (x_{n}) \) such that any free ultrafilter \( \mathcal{F} \) with \( (x_{n}) \in \mathcal{F} \) is metrically Ramsey.
 \end{theorem}
 
-As a follow up, one may ask if similar structure exists when coloring a larger class of subsets of \( X \). The positive answer to this question is the keynote of this paper. In this connection, we will analyze the family \( \Gamma_{X}  \) of all compact subsets of \( X \).
+As a follow up, one may ask if similar structure exists when colouring a larger class of subsets of \( X \). The positive answer to this question is the keynote of this paper. In this connection, we will analyse the family \( \Gamma_{X} \) of all compact subsets of \( X \).
 
-We generalize isometric colorings along these lines. The map \( \chi : \Gamma_{X}  \to [k] \) is called a \emph{diametric coloring} if \( \chi (A_1) = \chi (A_2) \) for every pair \( A_1, A_2 \) of compact subsets of \( X \) with \( \operatorname{diam} A_1 = \operatorname{diam} A_2  \). Accordingly, a set \( M \subseteq X \) is monochrome if its compact subsets are the same color. 
+We generalise isometric colourings along these lines. The map \( \chi : \Gamma_{X} \to [k] \) is called a \emph{diametric colouring} if \( \chi (A_1) = \chi (A_2) \) for every pair \( A_1, A_2 \) of compact subsets of \( X \) with \( \operatorname{diam} A_1 = \operatorname{diam} A_2 \). Accordingly, a subset \( M \subseteq X \) is monochrome if its compact subsets are the same colour. 
 
-Given this, we say that a free ultrafilter \( \mathcal{F}  \) on \( X \) is \emph{diametrically Ramsey} if for every diametric coloring \( \chi \) there is a monochrome set \( M  \in \mathcal{F}  \). Since finite sets are compact, \( \Gamma_{X}  \) contains \( [X]^{2}  \) so that every diametric coloring is isometric.
+Given this, we say that a free ultrafilter \( \mathcal{F} \) on \( X \) is \emph{diametrically Ramsey} if for every diametric colouring \( \chi \) there is a monochrome set \( M \in \mathcal{F} \). Since finite sets are compact, \( \Gamma_{X} \) contains \( [X]^{2} \) so that every diametric colouring is isometric.
 
 In this context, our main result is the following.
 \begin{theorem}
 \label{main:result}
-Every infinite ultrametric space \( X \) contains a sequence \((x_{n})\) such that every free ultrafilter \( \mathcal{F}  \) with \( (x_{n}) \in \mathcal{F}  \) is diametrically Ramsey.
+Every infinite ultrametric space \( X \) contains a sequence \((x_{n})\) such that any free ultrafilter \( \mathcal{F} \) with \( (x_{n}) \in \mathcal{F} \) is diametrically Ramsey.
 \end{theorem}
 
 Building towards the main result, the following two sections review some elementary properties of ultrametric spaces and filters. We then prove Theorem \ref{main:result} in Section \ref{sec:4}.
